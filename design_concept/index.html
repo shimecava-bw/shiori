@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>和カフェ 栞 - SHIORI - ビジュアル・デザインコンセプト</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937;
+            scroll-behavior: smooth;
+            line-height: 1.8;
+        }
+        .serif-font {
+            font-family: 'Noto Serif JP', serif;
+        }
+        .main-theme-text { color: #4a5d23; }
+        .bg-theme-soft { background-color: #f4f6f0; }
+        .border-theme { border-color: #4a5d23; }
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: #4a5d23;
+        }
+        .sidebar {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            background-color: #fcfbf9;
+            border-right: 1px solid #e5e7eb;
+        }
+        .sidebar-link {
+            transition: all 0.2s;
+            border-radius: 0.5rem;
+            margin: 0.125rem 0.5rem;
+        }
+        .sidebar-link:hover {
+            background-color: #e5e7eb;
+            color: #111827;
+        }
+        .content-header {
+            padding: 4rem 0 3rem 0;
+            margin-bottom: 3rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .badge-theme {
+            background-color: #f3f4f6;
+            color: #4b5563;
+        }
+        .highlight-box {
+            border-left: 4px solid #4a5d23;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            background-color: #fcfbf9;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .important-red {
+            border-left: 4px solid #b87333;
+            background-color: #fffaf5;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        li::marker {
+            color: #4a5d23;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        th {
+            background-color: #f4f6f0;
+            color: #4a5d23;
+            font-weight: 700;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        td {
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            vertical-align: top;
+            color: #374151;
+        }
+        tr:nth-child(even) td {
+            background-color: #fafaf8;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-80 sidebar order-2 md:order-1 flex flex-col pt-8 pb-12">
+            <nav class="flex-1 space-y-1">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 px-6">INDEX / 目次</p>
+                <a href="#section-1" class="sidebar-link block px-6 py-2 text-sm text-gray-600">1. ブランドコア</a>
+                <a href="#section-2" class="sidebar-link block px-6 py-2 text-sm text-gray-600">2. 世界観の方向性（3軸）</a>
+                <a href="#section-3" class="sidebar-link block px-6 py-2 text-sm text-gray-600">3. カラーパレット案</a>
+                <a href="#section-4" class="sidebar-link block px-6 py-2 text-sm text-gray-600">4. ターゲットペルソナ</a>
+                <a href="#section-5" class="sidebar-link block px-6 py-2 text-sm text-gray-600">5. ブランドボイス</a>
+                <a href="#section-6" class="sidebar-link block px-6 py-2 text-sm text-gray-600">6. 昼夜の二毛作構造</a>
+                <a href="#section-7" class="sidebar-link block px-6 py-2 text-sm text-gray-600">7. ファサード演出アイデア</a>
+                <a href="#section-8" class="sidebar-link block px-6 py-2 text-sm text-gray-600">8. 今後のヒアリング事項</a>
+            </nav>
+
+            <div class="mx-4 mt-8 p-6 bg-white border border-[#e5e7eb] rounded-xl text-xs text-gray-500 shadow-sm">
+                <p class="font-bold mb-3 text-gray-800 text-sm">企画資料情報</p>
+                <div class="space-y-2 font-medium">
+                    <p class="flex justify-between"><span>企画名:</span> <span class="text-gray-800 font-bold">和カフェ 栞 - SHIORI -</span></p>
+                    <p class="flex justify-between"><span>形式:</span> <span class="text-gray-800 font-bold">デザインコンセプト（叩き台）</span></p>
+                    <p class="flex justify-between"><span>ブランド:</span> <span class="text-[#4a5d23] font-bold">THE Public Stand</span></p>
+                    <p class="flex justify-between"><span>制作者:</span> <span class="text-gray-600">CAMETRUE</span></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 order-1 md:order-2 px-6 md:px-16 bg-white">
+
+            <!-- Header -->
+            <header class="content-header border-b border-[#e5e7eb]">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                    <div>
+                        <span class="badge badge-theme">DESIGN CONCEPT</span>
+                        <p class="text-xs tracking-widest text-stone-400 font-bold uppercase mb-2">THE Public Stand</p>
+                        <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 leading-tight serif-font">和カフェ 栞 - SHIORI -<br>ビジュアル・デザインコンセプト</h1>
+                    </div>
+                    <div class="mt-4 md:mt-0 md:text-right text-xs text-gray-400 font-bold font-mono">
+                        <p>CAMETRUE</p>
+                        <p class="font-normal text-[10px] text-gray-400/80">- create your imagination -</p>
+                    </div>
+                </div>
+                <div class="highlight-box rounded-r-lg mt-6">
+                    <p class="text-lg font-bold text-[#4a5d23] serif-font">「銀座の物語に、一息の栞を。」</p>
+                </div>
+                <p class="text-gray-500 text-sm font-medium mt-4">
+                    和カフェ 栞（仮）のビジュアル・ブランドデザイン方針をまとめた叩き台資料です。
+                </p>
+            </header>
+
+            <!-- 1. ブランドコア -->
+            <section id="section-1" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">1. ブランドコア</h2>
+                </div>
+                <div class="space-y-6">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="w-1/4">キャッチコピー</th>
+                                <td class="font-bold text-[#4a5d23] serif-font text-base">銀座の物語に、一息の栞を。</td>
+                            </tr>
+                            <tr>
+                                <th>店名（仮）</th>
+                                <td>和カフェ 栞 - SHIORI - ／ THE Public Stand</td>
+                            </tr>
+                            <tr>
+                                <th>意味</th>
+                                <td>栞＝書物に挟む目印・道しるべ。銀座の喧騒の中に、静かな休息の場をデザインする。</td>
+                            </tr>
+                            <tr>
+                                <th>ベンチマーク参考</th>
+                                <td>プロント「Tsumugi（つむぎ）」— ビジュアル・イメージの参考として。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="bg-stone-50 p-6 rounded-xl border border-stone-200/80 text-sm text-gray-700 leading-relaxed">
+                        パブリックスタンドの持つ「社交・賑わい（動）」の空間に、和カフェの「静寂・上質（静）」を掛け合わせる。既存のアイドルタイム（10:00〜17:00）を最大化し、昼夜で全く異なる顔を持つ二毛作業態として構築する。
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 世界観の方向性 -->
+            <section id="section-2" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">2. 世界観の方向性（3軸）</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="border border-stone-200 p-6 rounded-xl bg-white shadow-sm">
+                        <span class="text-xs font-bold text-[#4a5d23] tracking-widest block mb-2 uppercase">軸1</span>
+                        <h4 class="font-bold text-gray-900 mb-3 serif-font">振り切った和</h4>
+                        <ul class="text-xs text-gray-600 leading-relaxed space-y-2 list-disc ml-4">
+                            <li>中途半端な和モダンではなく、のれん・赤畳・炭火・抹茶という記号を迷わず全面に出す</li>
+                            <li>インバウンドに「これが見たかった」と思わせる直球の演出を追求</li>
+                            <li>「少し胡散臭いくらいに振り切った和」がむしろ強み</li>
+                        </ul>
+                    </div>
+                    <div class="border border-stone-200 p-6 rounded-xl bg-white shadow-sm">
+                        <span class="text-xs font-bold text-amber-700 tracking-widest block mb-2 uppercase">軸2</span>
+                        <h4 class="font-bold text-gray-900 mb-3 serif-font">銀座の品格</h4>
+                        <ul class="text-xs text-gray-600 leading-relaxed space-y-2 list-disc ml-4">
+                            <li>安っぽさは絶対に排除。素材・什器・盛り付けに一流感を持たせる</li>
+                            <li>既存のスチームパンク素材（歯車・アンティーク家具）を「和モダン」として再定義</li>
+                            <li>大正ロマン調の鉄マテリアルと「和」の親和性を最大限に活かす</li>
+                        </ul>
+                    </div>
+                    <div class="border border-stone-200 p-6 rounded-xl bg-white shadow-sm">
+                        <span class="text-xs font-bold text-[#b87333] tracking-widest block mb-2 uppercase">軸3</span>
+                        <h4 class="font-bold text-gray-900 mb-3 serif-font">体験としての記憶</h4>
+                        <ul class="text-xs text-gray-600 leading-relaxed space-y-2 list-disc ml-4">
+                            <li>食べて終わりではなく、自分で焼く・注ぐという体験がSNSに残る</li>
+                            <li>来店そのものがコンテンツになる設計</li>
+                            <li>キル・ビル的なエッジのある和の世界観でインバウンドの記憶に刻む</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. カラーパレット案 -->
+            <section id="section-3" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">3. カラーパレット案</h2>
+                </div>
+                <div class="space-y-4">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>役割</th>
+                                <th>カラー</th>
+                                <th>イメージ・用途</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">メインカラー</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-6 h-6 rounded-full border border-gray-200" style="background-color:#4a5d23;"></div>
+                                        <span>深緑（抹茶色）</span>
+                                    </div>
+                                </td>
+                                <td>専門性・本格感。ロゴ・のれん・主要テキスト</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">アクセントカラー</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-6 h-6 rounded-full border border-gray-200" style="background-color:#c0392b;"></div>
+                                        <span>朱赤</span>
+                                    </div>
+                                </td>
+                                <td>和・エネルギー・映え。赤畳・椅子・強調要素</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">ベースカラー</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-6 h-6 rounded-full border border-gray-200" style="background-color:#fdfbf5;"></div>
+                                        <span>白・生成り</span>
+                                    </div>
+                                </td>
+                                <td>清潔感・昼の明るさ。壁・制服・背景</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">補助カラー</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-6 h-6 rounded-full border border-gray-200" style="background-color:#2d2d2d;"></div>
+                                        <span>墨色（濃いグレー）</span>
+                                    </div>
+                                </td>
+                                <td>品格・引き締め。テキスト・縁取り</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. ターゲットペルソナ -->
+            <section id="section-4" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">4. ターゲットペルソナ</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-stone-900 text-stone-100 p-6 rounded-xl">
+                        <span class="text-xs text-amber-400 font-bold tracking-widest block mb-1 uppercase">Persona A / 主軸</span>
+                        <h4 class="text-lg font-bold mb-3 serif-font">インバウンド</h4>
+                        <ul class="space-y-2 text-sm text-stone-300 list-disc ml-4">
+                            <li>欧米・東南アジアからの訪日観光客</li>
+                            <li>銀座・築地エリアを回遊中</li>
+                            <li>「本物の日本体験」を求めている</li>
+                            <li>SNSに映える体験を重視</li>
+                            <li>英語での情報収集・予約が前提</li>
+                        </ul>
+                    </div>
+                    <div class="bg-emerald-50 text-emerald-950 p-6 rounded-xl border border-emerald-200">
+                        <span class="text-xs text-[#4a5d23] font-bold tracking-widest block mb-1 uppercase">Persona B / 副軸</span>
+                        <h4 class="text-lg font-bold mb-3 serif-font">銀座の昼の客</h4>
+                        <ul class="space-y-2 text-sm text-emerald-900 list-disc ml-4">
+                            <li>50〜70代、女性中心</li>
+                            <li>ショッピング・観劇の合間の休憩</li>
+                            <li>クオリティと落ち着きを求める</li>
+                            <li>「ちゃんとしたお店」への信頼感</li>
+                            <li>さらさら食べられる和食への親和性</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. ブランドボイス -->
+            <section id="section-5" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">5. ブランドボイス（言葉のトーン）</h2>
+                </div>
+                <div class="space-y-6">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="w-1/5">日本語</th>
+                                <td>丁寧だが堅すぎない、温かみのある言葉。品格を保ちつつ親しみやすく。</td>
+                            </tr>
+                            <tr>
+                                <th>英語</th>
+                                <td>シンプルで直感的。本物感・体験感を短い言葉で伝える。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="highlight-box rounded-r-lg">
+                        <p class="text-base font-bold text-gray-900 serif-font mb-2">コピー例</p>
+                        <p class="text-lg font-bold text-[#4a5d23] serif-font">「炭火で、自分で焼く。それだけで、旅になる。」</p>
+                        <p class="text-sm text-stone-500 mt-2 italic font-medium">"Grill your own. Taste the real Japan."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. 昼夜の二毛作構造 -->
+            <section id="section-6" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">6. 昼夜の二毛作構造（ブランド切り替え設計）</h2>
+                </div>
+                <div class="space-y-6">
+                    <div class="highlight-box rounded-r-lg">
+                        <p class="font-bold text-[#4a5d23]">【内装デザインの基本方針】</p>
+                        <p class="text-sm text-gray-700 mt-2 leading-relaxed">
+                            店内の既存素材（歯車・ゴールド・アイアン・ダークブラウン）をそのまま活かした内装の世界観の表現。大規模改修なしに「和モダン」として再定義する。スチームパンクのアイアン素材・ゴールドの色味は、大正ロマンや「キル・ビル」的な和のエッジとも高い親和性を持つ。この既存資産をゼロコストで和の演出に転用する。
+                        </p>
+                    </div>
+
+                    <div class="important-red rounded-r-lg">
+                        <p class="font-bold text-[#b87333]">【ファサードのミッション】</p>
+                        <p class="text-sm text-gray-700 mt-2 leading-relaxed">
+                            現状の黄色×黒のギラついた看板・竹柄パネルの外観を、のれん等の「被せ」だけでランチタイムにパッと見た瞬間に和カフェに見えるようにすること。完全に別の店舗として認識させる「二毛作」を実現する。
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                        <div class="bg-emerald-50 border border-emerald-200 p-6 rounded-xl">
+                            <span class="text-xs text-[#4a5d23] font-bold tracking-widest block mb-1 uppercase">昼（10:00〜17:00）</span>
+                            <h4 class="text-lg font-bold mb-3 text-emerald-900 serif-font">栞 SHIORI</h4>
+                            <p class="text-xs font-bold text-[#4a5d23] mb-2">静寂・和・抹茶・休息</p>
+                            <ul class="text-sm text-emerald-800 space-y-1 list-disc ml-4">
+                                <li>白と緑ののれん掲出</li>
+                                <li>赤畳・赤椅子の配置</li>
+                                <li>白ベースの明るい制服</li>
+                                <li>看板盤面の差し替え</li>
+                            </ul>
+                        </div>
+                        <div class="bg-stone-900 text-stone-100 p-6 rounded-xl">
+                            <span class="text-xs text-amber-400 font-bold tracking-widest block mb-1 uppercase">夜（17:00〜）</span>
+                            <h4 class="text-lg font-bold mb-3 serif-font">Public Stand</h4>
+                            <p class="text-xs font-bold text-amber-400 mb-2">社交・スチームパンク・賑わい</p>
+                            <ul class="text-sm text-stone-300 space-y-1 list-disc ml-4">
+                                <li>のれん撤去</li>
+                                <li>ギラつく夜の看板に復帰</li>
+                                <li>夜の制服・照明に切り替え</li>
+                                <li>昼の体験客を夜に呼び込む送客導線</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. ファサード演出アイデア -->
+            <section id="section-7" class="section-card p-10 bg-theme-soft border-theme border-2">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">7. ファサード演出アイデア — 外から一瞬で「京都の茶屋」に見せる</h2>
+                </div>
+                <div class="space-y-8">
+                    <p class="text-sm text-gray-600 leading-relaxed">低コストで最大効果を生む演出要素。大規模改修不要、昼だけ設置・撤去が可能なものを中心に選定。</p>
+
+                    <div>
+                        <h3 class="text-base font-bold text-gray-900 mb-4 flex items-center">
+                            <span class="text-[#4a5d23] mr-2">◎</span> 最優先4点セット
+                        </h3>
+                        <p class="text-xs text-gray-500 mb-4">この組み合わせで別業態として認識させられる</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>要素</th>
+                                    <th>効果</th>
+                                    <th>備考</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-bold">のれん</td>
+                                    <td>「和の店」を一目で伝える最強の記号</td>
+                                    <td>白×深緑。大きめサイズで看板を隠す効果も。営業終了後は撤去</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">提灯</td>
+                                    <td>インバウンドが最も直感的に「和」と認識する記号</td>
+                                    <td>赤か白。入口上部に吊るすだけ。コスト極小</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">赤い番傘</td>
+                                    <td>京都の茶屋感を一瞬で演出。SNS映えも強い</td>
+                                    <td>開いた状態で入口横に1本置くだけ</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">筆文字黒板</td>
+                                    <td>「何の店か」を外から即座に伝える</td>
+                                    <td>「抹茶」「お団子」「御膳」を筆文字風で。英語併記でインバウンドにも伝わる</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <h3 class="text-base font-bold text-gray-900 mb-4 flex items-center">
+                            <span class="text-[#4a5d23] mr-2">◎</span> 追加で効果的な要素
+                        </h3>
+                        <ul class="space-y-3 text-sm text-gray-700 list-disc ml-6">
+                            <li><strong>竹の鉢植え</strong> — 入口両脇に設置。現状の竹柄パネルとも呼応し、一体感が生まれる</li>
+                            <li><strong>砂利・石</strong> — 入口足元に少量置くだけで茶屋の入口感。コスト極小</li>
+                            <li><strong>行灯（あんどん）風ライト</strong> — 入口付近に置く。昼でも和の雰囲気を醸成</li>
+                            <li><strong>和紙調ウィンドウシート</strong> — ガラス内側に部分貼り。夜の黒ベースを昼は白く柔らかく見せる</li>
+                            <li><strong>水引・家紋モチーフステッカー</strong> — ガラス面に貼るだけ。低コストで和の記号を追加</li>
+                            <li><strong>照明の昼夜切り替え</strong> — ギラつくゴールド照明を昼だけ青白い自然光系に変更。別の店に見える</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-stone-900 text-stone-100 p-8 rounded-xl">
+                        <h4 class="text-base font-bold mb-3 serif-font text-amber-500">ポイント</h4>
+                        <p class="text-sm leading-relaxed opacity-95">
+                            のれん＋提灯＋番傘＋筆文字黒板の4点セットだけで、あの黄色×黒の外観でもランチタイムに「京都の茶屋」として認識させることが可能。いずれも撤去可能なため夜のPublic Standへの切り替えもスムーズ。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. 今後のヒアリング・確認事項 -->
+            <section id="section-8" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">8. 今後のヒアリング・確認事項</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="highlight-box rounded-r-lg">
+                        <p class="font-bold text-[#4a5d23]">以下は月曜会議で確認・決定したい項目です。</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-700 list-disc ml-6">
+                        <li>店名・屋号の最終決定（「栞」で確定か、他の候補はあるか）</li>
+                        <li>ロゴのデザイン方向性（和文のみ・英文併記・シンボルマークの有無）</li>
+                        <li>ファサード施工の予算感・制約（のれんサイズ、看板差し替えの可否）</li>
+                        <li>制服のデザイン方向性（エプロンの形・色の詳細）</li>
+                        <li>オープン日の確定（7月頭の具体的な日付）</li>
+                    </ul>
+                </div>
+            </section>
+
+            <footer class="mt-16 py-10 border-t border-[#e5e7eb] text-center text-gray-400 text-xs tracking-widest uppercase">
+                <p>&copy; 2026 THE Public Stand & 和カフェ栞. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scroll tracking script -->
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.sidebar-link').forEach(link => {
+                        link.classList.remove('bg-theme-soft', 'font-bold', 'text-[#4a5d23]');
+                        link.style.backgroundColor = '';
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('bg-theme-soft', 'font-bold', 'text-[#4a5d23]');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
