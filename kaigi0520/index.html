@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE Public Stand 和カフェ 栞 - SHIORI - 企画提案書</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937;
+            scroll-behavior: smooth;
+            line-height: 1.8;
+        }
+        .serif-font {
+            font-family: 'Noto Serif JP', serif;
+        }
+        .main-theme-text { color: #4a5d23; }
+        .bg-theme-soft { background-color: #f4f6f0; }
+        .border-theme { border-color: #4a5d23; }
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: #4a5d23;
+        }
+        .sidebar {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            background-color: #fcfbf9;
+            border-right: 1px solid #e5e7eb;
+        }
+        .sidebar-link {
+            transition: all 0.2s;
+            border-radius: 0.5rem;
+            margin: 0.125rem 0.5rem;
+        }
+        .sidebar-link:hover {
+            background-color: #e5e7eb;
+            color: #111827;
+        }
+        .content-header {
+            padding: 4rem 0 3rem 0;
+            margin-bottom: 3rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .badge-theme { 
+            background-color: #f3f4f6; 
+            color: #4b5563; 
+        }
+        .highlight-box {
+            border-left: 4px solid #4a5d23;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            background-color: #fcfbf9;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .important-red {
+            border-left: 4px solid #b87333;
+            background-color: #fffaf5;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        li::marker {
+            color: #4a5d23;
+        }
+        .red-marker li::marker {
+            color: #b87333;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+<!-- Chosen Palette: Matcha Green (#4a5d23), Steampunk Copper/Brown (#b87333), Warm Off-White (#fcfbf9), Charcoal Gray (#1f2937) -->
+<!-- Application Structure Plan: We directly mirrored the two-column document layout from 'TKW定例会議：5月12日.html'. The left column features a fixed sidebar with dynamic scroll-tracking index navigation, while the right column contains page-by-page semantic 'section-card' structures containing the precise, unabridged text of the '和カフェ 栞' proposal. The color scheme is beautifully customized to matcha green and steampunk bronze to align perfectly with the concept. -->
+<!-- Visualization & Content Choices: 
+1. Concept Contrast Section -> Goal: Compare -> Method: Split vertical blocks styled with theme colors, mirroring the exact "Dynamic/Static Diagram" text.
+2. Pricing and Menu Section -> Goal: Organize -> Method: Custom menu tables and grid-based tier lists displaying verbatim pricing and categories.
+3. Analysis Section -> Goal: Contextualize -> Method: Styled warning highlight blocks (important-red) to structure the risks and strategic proposals.
+-->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar Navigation (TKW-style) -->
+        <aside class="w-full md:w-80 sidebar order-2 md:order-1 flex flex-col pt-8 pb-12">
+            <nav class="flex-1 space-y-1">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 px-6">INDEX / 目次</p>
+                <a href="#section-page-2" class="sidebar-link block px-6 py-2 text-sm text-gray-600">1. 第1章：コンセプト・ターゲット</a>
+                <a href="#section-page-3" class="sidebar-link block px-6 py-2 text-sm text-gray-600">2. 第2章：和への転換・空間設計</a>
+                <a href="#section-page-4" class="sidebar-link block px-6 py-2 text-sm text-gray-600">3. 第3章：メニュー・プライシング</a>
+                <a href="#section-page-5" class="sidebar-link block px-6 py-2 text-sm text-gray-600">4. 第4章：新ブランド戦略ビジョン</a>
+                <a href="#section-analysis" class="sidebar-link block px-6 py-2 text-sm text-gray-600">5. 第5章：独自考察と戦略的提案</a>
+            </nav>
+            
+            <div class="mx-4 mt-8 p-6 bg-white border border-[#e5e7eb] rounded-xl text-xs text-gray-500 shadow-sm">
+                <p class="font-bold mb-3 text-gray-800 text-sm">企画資料情報</p>
+                <div class="space-y-2 font-medium">
+                    <p class="flex justify-between"><span>企画名:</span> <span class="text-gray-800 font-bold">和カフェ 栞 - SHIORI -</span></p>
+                    <p class="flex justify-between"><span>形式:</span> <span class="text-gray-800 font-bold">完全統合・原文保存版</span></p>
+                    <p class="flex justify-between"><span>ブランド:</span> <span class="text-[#4a5d23] font-bold">THE Public Stand</span></p>
+                    <p class="flex justify-between"><span>制作者:</span> <span class="text-gray-600">CAMETRUE</span></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area (TKW-style) -->
+        <div class="flex-1 order-1 md:order-2 px-6 md:px-16 bg-white">
+            <!-- Integrated Header (PAGE 1 and Header Merged) -->
+            <header class="content-header border-b border-[#e5e7eb]">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                    <div>
+                        <span class="badge badge-theme">BUSINESS PROPOSAL</span>
+                        <p class="text-xs tracking-widest text-stone-400 font-bold uppercase mb-2">THE Public Stand</p>
+                        <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 leading-tight serif-font">和カフェ 栞 - SHIORI - 企画提案書</h1>
+                    </div>
+                    <div class="mt-4 md:mt-0 md:text-right text-xs text-gray-400 font-bold font-mono">
+                        <p>CAMETRUE</p>
+                        <p class="font-normal text-[10px] text-gray-400/80">- create your imagination -</p>
+                    </div>
+                </div>
+                <div class="highlight-box rounded-r-lg mt-6">
+                    <p class="text-lg font-bold text-[#4a5d23] serif-font">銀座の物語に、一息 of 栞を。</p>
+                </div>
+                <p class="text-gray-500 text-sm font-medium mt-4">
+                    『001.pdf』に掲載されている情報を一切削らず、一字一句をそのままのニュアンスで復元した完全同期版レイアウト資料です。
+                </p>
+            </header>
+
+            <!-- 第1章：コンセプト・ターゲット (PAGE 2) -->
+            <section id="section-page-2" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">第1章：コンセプト・ターゲット</h2>
+                </div>
+                <div class="space-y-8">
+                    <div class="highlight-box rounded-r-lg">
+                        <p class="text-lg font-bold text-[#4a5d23] serif-font">昼間の銀座コリドー街に、新たな収益の「栞」を挟む。</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 flex items-center text-gray-800">
+                            <span class="w-2 h-2 rounded-full bg-[#4a5d23] mr-3"></span>
+                            "Dynamic / Static" Contrast Diagram
+                        </h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                            <div class="bg-stone-900 text-stone-100 p-6 rounded-xl border border-stone-800">
+                                <span class="text-xs text-amber-500 font-bold tracking-widest block mb-1">Public Stand (Night)</span>
+                                <h4 class="text-xl font-bold mb-3">社交・賑わい (動)</h4>
+                                <ul class="space-y-1 text-sm text-stone-300">
+                                    <li>・社交</li>
+                                    <li>・スチームパンク</li>
+                                    <li>・賑わい</li>
+                                </ul>
+                            </div>
+                            <div class="bg-emerald-50 text-emerald-950 p-6 rounded-xl border border-emerald-200">
+                                <span class="text-xs text-[#4a5d23] font-bold tracking-widest block mb-1">栞 SHIORI (Day)</span>
+                                <h4 class="text-xl font-bold mb-3">静寂・上質 (静)</h4>
+                                <ul class="space-y-1 text-sm text-emerald-900">
+                                    <li>・静寂</li>
+                                    <li>・和・抹茶</li>
+                                    <li>・休息</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-stone-50 p-6 rounded-xl border border-stone-100 text-sm text-gray-600 leading-relaxed">
+                            <p class="font-bold text-gray-800 mb-2">「銀座の物語に、一息の栞を。」</p>
+                            <p class="text-xs text-stone-400 mb-4">(栞=書物に挟む目印、道しるべの意)</p>
+                            パブスタの持つ「社交・賑わい(動)」の空間に、和カフェの「静寂・上質(静)」を掛け合わせる。既存のアイドルタイム (10:00~17:00)を最大化し、喧騒の中に休息の場をデザインする新業態『THE Public Stand 和カフェ栞 (SHIORI)』の提案。
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 flex items-center text-gray-800">
+                            <span class="w-2 h-2 rounded-full bg-[#4a5d23] mr-3"></span>
+                            Target Audience / ターゲット層
+                        </h3>
+                        <ul class="list-disc ml-10 text-gray-600 space-y-3">
+                            <li><strong class="text-gray-900 font-bold">人疲れしたインバウンド観光客</strong></li>
+                            <li><strong class="text-gray-900 font-bold">落ち着いた空間を求める大人の銀座層</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第2章：和への転換・空間設計 (PAGE 3) -->
+            <section id="section-page-3" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">第2章：和への転換・空間設計</h2>
+                </div>
+                <div class="space-y-8">
+                    <div class="highlight-box rounded-r-lg">
+                        <p class="text-lg font-bold text-[#4a5d23] serif-font">既存の「スチームパンク」を活かした、低コストな「和」への転換。</p>
+                        <p class="text-xs text-stone-500 mt-1 font-bold">CAMETRUE</p>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 rounded-xl border border-stone-200/80">
+                        <p class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3">店舗外観イメージのテキスト復元</p>
+                        <div class="text-sm text-stone-600 space-y-1 font-medium">
+                            <p>・カラオケ</p>
+                            <p>・パブスタ プラス HATOYA</p>
+                            <p>・CAFE DRINK / CRAFT BEER / WANNA GRAB A DRINK?</p>
+                            <p>・フコ / 3 / D</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-bold mb-3 text-gray-800">転換における具体的なアプローチ</h3>
+                        <ul class="list-disc ml-6 text-gray-600 space-y-4">
+                            <li>
+                                <span class="font-bold text-gray-900">・大規模な改装は不要。</span>既存 of 歯車やアンティーク家具を「和モダン」の借景として再定義。
+                            </li>
+                            <li>
+                                <span class="font-bold text-gray-900">・ミニマルな和風装飾と暖簾(のれん)の追加だけで、</span>昼間専用の全く新しい顔を創出。
+                            </li>
+                            <li>
+                                <span class="font-bold text-gray-900">・ファジーな状態からスタートし、</span>顧客層の反応を見ながらメニューや内装をアジャイルにアップデート可能。
+                            </li>
+                            <li>
+                                <span class="font-bold text-gray-900">・独立したWebブランディングを</span>展開し、和カフェ「栞」のイメージを広げる。
+                            </li>
+                            <li>
+                                <span class="font-bold text-gray-900">・和を意識したマテリアルを</span>部分部分に追加し、空間全体の統一感を高める。
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第3章：メニュー・プライシング (PAGE 4) -->
+            <section id="section-page-4" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">第3章：メニュー・プライシング</h2>
+                </div>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 text-gray-800">利益率と話題性を両立する、戦略的プライシングとメニュー展開。</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
+                            <div class="border border-stone-200 p-6 rounded-xl bg-white shadow-xs">
+                                <span class="text-xs font-bold text-yellow-700 block mb-1">単価 〜¥3,000</span>
+                                <h4 class="font-bold text-gray-900 mb-2">籠御膳(KAGO-GOZEN)</h4>
+                                <p class="text-xs text-gray-500">高単価フラッグシップ。銀座のランチ・インバウンド需要を牽引。</p>
+                            </div>
+                            <div class="border border-stone-200 p-6 rounded-xl bg-white shadow-xs">
+                                <span class="text-xs font-bold text-orange-600 block mb-1">単価 〜¥2,500</span>
+                                <h4 class="font-bold text-gray-900 mb-2">団子食べ放題</h4>
+                                <p class="text-xs text-gray-500">卓上で炙る体験型メニュー。圧倒的なSNS拡散を狙うフック。</p>
+                            </div>
+                            <div class="border border-stone-200 p-6 rounded-xl bg-white shadow-xs">
+                                <span class="text-xs font-bold text-green-700 block mb-1">単価 ¥600〜</span>
+                                <h4 class="font-bold text-gray-900 mb-2">日本茶・お抹茶ラテ</h4>
+                                <p class="text-xs text-gray-500">幅広い層を取り込む高利益率のベース基盤。オーツミルク等によるアップセル(+100円)。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-stone-50 p-8 rounded-xl border border-stone-200/80 space-y-6">
+                        <div>
+                            <span class="badge bg-[#4a5d23] text-white">[Drink]</span>
+                            <p class="text-xs text-stone-500 font-bold mb-2">CAMETRUE</p>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                お抹茶ラテ (プレーン/ホワイトチーズ/ピーチネクター/ローズラズベリー/レモンジンジャー/バニラバタフライピー) ※オーツミルク+100円 追い抹茶<br>
+                                台湾ミルクティー(ジャスミン/四季春茶/焙煎烏龍) ※タピオカ有無<br>
+                                濃抹茶(ホット/アイス) / コーヒー(ホット/アイス)
+                            </p>
+                        </div>
+
+                        <div>
+                            <span class="badge bg-amber-700 text-white">[Dessert]</span>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                団子食べ放題<br>
+                                抹茶パフェ/抹茶かき氷 (特濃あり) / 抹茶お汁粉/抹茶プリン / 抹茶アイス/抹茶わらびもち
+                            </p>
+                        </div>
+
+                        <div>
+                            <span class="badge bg-[#b87333] text-white">[Food]</span>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                御膳(ばら干し海苔の海老天/炙りサーモンとアボカド)<br>
+                                サンドウィッチ(謹製だし巻き玉子のパニーニ/和牛すき焼きクロックマダム) ※ケールとピクルス添え<br>
+                                うどん(ごまだれひもかわ/ えび天ひもかわ) / 熟成三元豚カツの卵とじお膳
+                            </p>
+                        </div>
+
+                        <div>
+                            <span class="badge bg-stone-600 text-white">[Side]</span>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                レーズンバター/チーズグリッシーニ/サーモンとアボカドのサラダ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第4章：新ブランド戦略ビジョン (PAGE 5) -->
+            <section id="section-page-5" class="section-card p-10">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">第4章：新ブランド戦略ビジョン</h2>
+                </div>
+                <div class="space-y-8">
+                    <div class="highlight-box rounded-r-lg">
+                        <p class="text-lg font-bold text-[#4a5d23] serif-font">新ブランド『和カフェ』の投入による、新たな顧客層の開拓と収益源の創出。</p>
+                        <p class="text-xs text-stone-500 mt-1 font-bold">CAMETRUE</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border border-stone-200 p-6 rounded-xl bg-white shadow-xs">
+                            <h4 class="font-bold text-gray-900 mb-2">新ブランド「栞 (SHIORI)」の確立</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">インバウンド・女性層・カフェ利用 をターゲットとした、独立した「和カフェ」ブランドとしての認知獲得。</p>
+                        </div>
+                        <div class="border border-stone-200 p-6 rounded-xl bg-white shadow-xs">
+                            <h4 class="font-bold text-gray-900 mb-2">相互送客の可能性</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">カフェでの体験が、夜のバー業態への興味関心に繋がる、緩やかなシナジー効果も期待。</p>
+                        </div>
+                        <div class="border border-stone-200 p-6 rounded-xl bg-white shadow-xs">
+                            <h4 class="font-bold text-gray-900 mb-2">Strategic Brand Incubation / ブランドポートフォリオの強化</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">・「Public Stand」と「栞 (SHIORI)」異なる魅力を持つ二つのブランドで、より幅広い客層にアプローチ。</p>
+                        </div>
+                        <div class="border border-stone-200 p-6 rounded-xl bg-white shadow-xs">
+                            <h4 class="font-bold text-gray-900 mb-2">新たな収益の柱の構築</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">昼間のアイドルタイムを活用し、夜の業態とは異なる新たな顧客層からの売上を創出。</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-stone-900 text-stone-100 p-8 rounded-xl">
+                        <h4 class="text-lg font-bold mb-3 serif-font text-amber-500">Strategic Vision / 戦略的総括</h4>
+                        <p class="text-sm leading-relaxed opacity-95">
+                            苦戦する現状を打破するための、新たなコンテンツとしての「和カフェ」導入。単なる昼営業ではなく、独立したブランドとして育成し、事業の新たな柱とすることを目指す戦略的企画。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第5章：独自考察と戦略的提案 (TKW-style) -->
+            <section id="section-analysis" class="section-card p-10 bg-theme-soft border-theme border-2">
+                <div class="flex items-center mb-8">
+                    <div class="w-1.5 h-8 bg-[#4a5d23] rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-900 serif-font">第5章：独自考察と戦略的提案</h2>
+                </div>
+                <div class="space-y-8">
+                    <div class="important-red rounded-r-xl border-l-4 border-red-500 shadow-sm">
+                        <h3 class="font-bold text-red-800 mb-3 flex items-center">
+                            <span>⚠️</span> 1. 空間デザインに関するコンフリクト（視覚的ノイズ）の懸念と提案
+                        </h3>
+                        <p class="text-sm text-gray-700 leading-relaxed ml-4 mb-4">
+                            <strong>【懸念事項】:</strong> パブスタ独特の暗めの照明、金属的なスチームパンク内装（歯車やパイプなど）は、本来「静寂・上質・休息」を求める和カフェのユーザー（特に大人の銀座層）にとって、落ち着かないノイズとなるリスクがあります。「暖簾とミニマルな装飾」のみでは、夜の「バー・ナイトクラブの残香（アルコール臭、内装のギラギラ感）」を隠しきれず、チープなポップアップ店舗のように見えてしまう懸念があります。
+                        </p>
+                        <div class="bg-white p-4 rounded-lg border border-red-100 ml-4">
+                            <span class="text-xs font-bold text-[#4a5d23] block mb-1">■ 戦略的提案：『大正ロマン・レトロスチームパンク』への空間ブランディングの再定義</span>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                スチームパンクと「和」を切り離すのではなく、日本の明治・大正期の洋風レトロ、あるいは「大正ロマン」をコンセプトに、既存のスチームパンク内装を100%肯定した上で「和」に仕立て直すことを提案します。
+                                スチームパンクの銅色や歯車は、大正レトロ、洋館テイスト、アンティークな喫茶文化とデザイン上の相性が抜群です。暖簾だけでなく「ステンドグラス風の照明カバー」「レトロな和柄クッション」「クラシックなジャズ音響」などを取り入れ、和モダンを超えた「レトロスチームパンク和カフェ」として独自の世界観を補強することで、ノイズを強力な「映え要素」に昇華させます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="important-red rounded-r-xl border-l-4 border-red-500 shadow-sm">
+                        <h3 class="font-bold text-red-800 mb-3 flex items-center">
+                            <span>⚙️</span> 2. オペレーション・衛生・安全面の転換ハードルと提案
+                        </h3>
+                        <p class="text-sm text-gray-700 leading-relaxed ml-4 mb-4">
+                            <strong>【懸念事項】:</strong> 10:00〜17:00という短い時間枠の中で、夜の「立ち飲み・賑わい」の動線から、昼の「卓上団子炙り、うどん、御膳」といった本格的な和食・和スイーツの着席型オペレーションへの物理的な切り替えが必要です。
+                            特に「卓上コンロ（団子炙り）」の導入は、スチームパンク空間における安全管理（換気、火災リスク、テーブルの焦げ防止）の観点から非常に厳格なルール策定が必要になります。また、夜間のアルコール汚れや臭気を、毎朝10:00までに「カフェクオリティの清潔感」へ完璧にリセットできるかの人的・時間的ハードルが想定されます。
+                        </p>
+                        <div class="bg-white p-4 rounded-lg border border-red-100 ml-4">
+                            <span class="text-xs font-bold text-[#4a5d23] block mb-1">■ 戦略的提案：ファジー（段階的）スタート時の「キラーメニュー限定化」</span>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                企画書内にある「アジャイル（俊敏）なアップデート」を逆手に取り、初動は「団子食べ放題」と「お抹茶ラテ」の2点に体験・注文を集中させるミニマルスタートを推奨します。
+                                御膳やひもかわうどん、サンドウィッチなどオペレーション負荷の高い調理工程は、キッチンの仕込みや転換時間が逼迫する要因になります。まずは、体験価値が最も高くSNS拡散が見込める「炙り団子」と「高利益率の抹茶ドリンク」をフックにオペレーションを定着させ、認知の拡大とともにフードメニュー（御膳類）を週替わりなどで順次追加していくアプローチが、現場の事故（提供遅延や衛生トラブル）を防止する上で最も現実的です。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="important-red rounded-r-xl border-l-4 border-red-500 shadow-sm">
+                        <h3 class="font-bold text-red-800 mb-3 flex items-center">
+                            <span>🧭</span> 3. 「コリドー街」のイメージギャップと導線への提案
+                        </h3>
+                        <p class="text-sm text-gray-700 leading-relaxed ml-4 mb-4">
+                            <strong>【懸念事項】:</strong> コリドー街は、夜の「ナンパの街」「飲み屋街」としての認知が非常に強く、昼間の人通りはビジネスパーソン中心、あるいは銀座中心部に比べて観光客の回遊が少ないエリアです。
+                            「人疲れした観光客」が、わざわざコリドー街の、一見すると「夜のパブ」であるビル内やエントランスに入ってくるための強力な導線設計（Webブランディング、およびコリドー街に「昼の栞」が存在することの物理的なアピール）がなければ、集客が空振りするリスクがあります。
+                        </p>
+                        <div class="bg-white p-4 rounded-lg border border-red-100 ml-4">
+                            <span class="text-xs font-bold text-[#4a5d23] block mb-1">■ 戦略的提案：夜間（パブスタ）への「リバース・ファーストドリンク・ギフト」による確実な相互送客</span>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                昼のカフェ利用客に対し、夜の「Public Stand」で使える「特製ウェルカムチケット（例：夜に提示するとファーストドリンク無料、またはオリジナル抹茶カクテル1杯プレゼント）」を手渡し、心理的ハードルを下げます。
+                                単なる相互送客の期待に留めず、「昼の静寂な世界」を体験したインバウンドや女性客が、「実はここは夜、全く違う世界（賑わい・社交）になる」という驚き（ギャップ）を持ち帰るストーリーを設計することで、パブスタの認知と夜間の客層拡大をダイレクトに促す仕組みを構築できます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="mt-16 py-10 border-t border-[#e5e7eb] text-center text-gray-400 text-xs tracking-widest uppercase">
+                <p>&copy; 2026 THE Public Stand & 和カフェ栞. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scroll tracking script (TKW-style) -->
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.sidebar-link').forEach(link => {
+                        link.classList.remove('bg-theme-soft', 'font-bold', 'text-[#4a5d23]');
+                        link.style.backgroundColor = '';
+
+                        if (link.getAttribute('href') === `#${id}`) {
+                            if (id === 'section-analysis') {
+                                // 重要な独自考察セクションはスチームパンク（赤茶系）でハイライト
+                                link.classList.add('font-bold');
+                                link.style.backgroundColor = '#fffaf5'; // bg-red-50/important-red border matching
+                            } else {
+                                link.classList.add('bg-theme-soft', 'font-bold', 'text-[#4a5d23]');
+                            }
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
