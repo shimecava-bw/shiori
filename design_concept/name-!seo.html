@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>店名候補 ネーミングコンセプト & SEO調査</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gd: #1d3d1a;
+  --gm: #2e5c2a;
+  --gp: #f2f6f0;
+  --amber: #9a6c1a;
+  --amber-bg: #fdf6e8;
+  --red: #9c2a1e;
+  --red-bg: #fdf0ef;
+  --blue: #2851A3;
+  --blue-bg: #E8F0FE;
+  --ink: #1a1a18;
+  --gray: #5a6472;
+  --line: #e2e8df;
+  --cream: #fdfbf6;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans JP',sans-serif; background:#1a1a1a; overflow:hidden; width:100vw; height:100vh; }
+
+.deck {
+  display:flex;
+  height:100vh;
+  transition:transform 0.55s cubic-bezier(0.77,0,0.175,1);
+}
+.slide {
+  width:100vw; height:100vh;
+  flex-shrink:0;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:5vh 8vw 8vh;
+  position:relative; overflow:hidden;
+  background:#fff;
+}
+.slide-cream { background:var(--cream); }
+.slide-dark  { background:var(--gd); }
+.stripe { position:absolute; left:0; top:0; width:5px; height:100%; background:var(--gd); }
+.stripe-blue  { position:absolute; left:0; top:0; width:5px; height:100%; background:var(--blue); }
+.stripe-amber { position:absolute; left:0; top:0; width:5px; height:100%; background:var(--amber); }
+.stripe-red   { position:absolute; left:0; top:0; width:5px; height:100%; background:var(--red); }
+
+/* nav */
+.nav { position:fixed; bottom:28px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:14px; z-index:200; }
+.nav-btn { width:40px; height:40px; border-radius:50%; border:1.5px solid rgba(255,255,255,0.25); background:rgba(30,30,30,0.6); color:white; font-size:16px; cursor:pointer; backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+.nav-btn:hover { background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.5); }
+.nav-btn:disabled { opacity:0.25; cursor:default; }
+.dots { display:flex; gap:6px; }
+.dot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.25); cursor:pointer; transition:all 0.25s; }
+.dot.on { background:#fff; width:18px; border-radius:3px; }
+.counter { position:fixed; top:22px; right:28px; font-size:12px; letter-spacing:0.08em; color:rgba(255,255,255,0.35); font-family:'EB Garamond',serif; z-index:200; }
+.copyright { position:fixed; bottom:32px; right:28px; font-size:11px; letter-spacing:0.08em; color:rgba(120,120,120,0.45); z-index:200; display:none; }
+
+/* type */
+.lbl { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:14px; }
+.ttl { font-family:'Noto Serif JP',serif; font-size:clamp(24px,3vw,40px); font-weight:700; color:var(--ink); line-height:1.35; margin-bottom:8px; }
+.sub { font-size:clamp(13px,1.3vw,16px); color:var(--gray); margin-bottom:24px; }
+.hr { width:100%; height:1px; background:var(--line); margin:16px 0; }
+
+/* card */
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; height:calc(100vh - 22vh - 120px); }
+.card { border-radius:10px; padding:24px; border:1px solid var(--line); background:#fff; display:flex; flex-direction:column; gap:12px; overflow:auto; }
+.card-green { border-color:#c8d8c0; }
+.card-amber { border-color:#e8d0a0; }
+.card-red   { border-color:#e8c0c0; }
+.card-blue  { border-color:#c8d8f0; }
+
+.card-head { display:flex; align-items:baseline; gap:12px; margin-bottom:4px; }
+.kanji { font-family:'Noto Serif JP',serif; font-size:clamp(36px,4.5vw,56px); font-weight:700; line-height:1; }
+.roman { font-size:14px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gray); }
+.badge { display:inline-block; padding:3px 12px; border-radius:999px; font-size:11px; font-weight:700; margin-left:auto; }
+
+.concept { font-size:clamp(13px,1.3vw,16px); color:#374151; line-height:1.85; }
+.tagline { font-family:'Noto Serif JP',serif; font-size:clamp(13px,1.3vw,16px); font-weight:700; border-left:3px solid; padding-left:12px; }
+
+.seo-box { border-radius:6px; padding:12px 16px; font-size:clamp(14px,1.3vw,16px); line-height:1.8; }
+.seo-label { font-size:13px; font-weight:700; letter-spacing:0.06em; margin-bottom:6px; }
+
+.bypass-box { background:#f0f6ff; border-left:3px solid #4A6FD4; border-radius:0 6px 6px 0; padding:12px 16px; font-size:clamp(14px,1.3vw,16px); line-height:1.85; color:#2851A3; }
+.bypass-label { font-size:13px; font-weight:700; margin-bottom:8px; color:#2851A3; }
+
+/* color */
+.c-blue  { color:var(--blue); }
+.c-green { color:var(--gd); }
+.c-amber { color:var(--amber); }
+.c-red   { color:var(--red); }
+.seo-green { background:var(--gp); }
+.seo-amber { background:var(--amber-bg); }
+.seo-red   { background:var(--red-bg); }
+.seo-blue  { background:var(--blue-bg); }
+.tagline-blue  { border-color:var(--blue); color:var(--blue); }
+.tagline-green { border-color:var(--gm); color:var(--gd); }
+.tagline-amber { border-color:var(--amber); color:var(--amber); }
+.tagline-red   { border-color:var(--red); color:var(--red); }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+<!-- S1: COVER -->
+<div class="slide" id="s1" style="justify-content:center; align-items:flex-start; padding:0 10vw;">
+  <div class="stripe"></div>
+  <div style="max-width:660px;">
+    <p style="font-size:11px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--gm); margin-bottom:28px;">THE Public Stand</p>
+    <h1 style="font-family:'Noto Serif JP',serif; font-size:clamp(32px,4.5vw,60px); font-weight:700; color:var(--gd); line-height:1.25; margin-bottom:16px;">店名候補<br>ネーミングコンセプト</h1>
+    <div style="width:44px; height:2px; background:var(--gd); margin-bottom:28px;"></div>
+    <p style="font-size:12px; color:var(--gray); letter-spacing:0.1em;">2026年5月25日現在</p>
+  </div>
+</div>
+
+<!-- S2: 栞 -->
+<div class="slide" id="s2" style="padding:5vh 8vw 8vh;">
+  <div class="stripe-blue"></div>
+  <p class="lbl c-blue">現行候補名</p>
+  <div style="display:grid; grid-template-columns:1fr; gap:16px; height:calc(100vh - 18vh - 100px);">
+    <div class="card card-blue" style="overflow:auto;">
+      <div class="card-head">
+        <span class="kanji c-blue">栞</span>
+        <span class="roman">SHIORI</span>
+        <span class="badge" style="background:var(--blue-bg); color:var(--blue);">現行候補名</span>
+      </div>
+      <p class="concept">本のページに挟む栞のように、銀座での時間を記憶に残す場所。訪れるたびに「また開きたくなる」体験を提供する。旅人の心の中に、そっと差し込まれる一枚。</p>
+      <p class="tagline tagline-blue">「ここに来た記憶を、あなたの栞に」</p>
+      <div class="seo-box seo-blue">
+        <p class="seo-label c-blue">SEO：競合あり</p>
+        銀座に天ぷら専門店「栞（SHIORI）」が存在。ただし「和カフェ 栞 銀座」「栞 抹茶 銀座」など業態名をセットにした複合キーワードで検索した場合、天ぷら店とは検索意図が自然に分かれるため、棲み分けは十分可能。
+      </div>
+      <div class="bypass-box">
+        <p class="bypass-label">💡 迂回・対処策</p>
+        ① 店名は常に「和カフェ 栞」で統一する：食べログ・Googleビジネスプロフィール・SNS・看板すべてに「和カフェ 栞」と登録。「栞」単独ではなく「和カフェ 栞」を固有名詞として育てることで、天ぷら店との混在を回避できる。<br><br>
+        ② 英語副題で差別化：「和カフェ 栞 -SHIORI MATCHA CAFÉ GINZA-」のように副題を加えることで、インバウンド向け独自ワードを確立できる。<br><br>
+        ③ Googleビジネスプロフィールを早期整備：カフェ業態として構造化データを正確に登録し、AIにも「カフェとしての栞」と明確に認識させる。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S3: SEOクリーン 澄・刻 -->
+<div class="slide slide-cream" id="s3">
+  <div class="stripe"></div>
+  <p class="lbl c-green">SEOクリーン候補 — 1 / 2</p>
+  <div class="g2">
+    <div class="card card-green">
+      <div class="card-head">
+        <span class="kanji c-green">澄</span>
+        <span class="roman">SUMI</span>
+        <span class="badge" style="background:var(--gp); color:var(--gm);">✅ 銀座クリア</span>
+      </div>
+      <p class="concept">茶葉がゆっくりと開き、カップに広がる澄んだ淡緑。雑念が消え、心が静まる場所。銀座の喧騒の中に存在する、透き通った静寂。</p>
+      <p class="tagline tagline-green">「澄んだ一杯が、あなたの時間を整える」</p>
+      <div class="seo-box seo-green">
+        <p class="seo-label c-green">SEO：問題なし</p>
+        銀座エリアに飲食店・カフェとしての競合なし。
+      </div>
+    </div>
+    <div class="card card-green">
+      <div class="card-head">
+        <span class="kanji c-green">刻</span>
+        <span class="roman">TOKI</span>
+        <span class="badge" style="background:var(--gp); color:var(--gm);">✅ 銀座クリア</span>
+      </div>
+      <p class="concept">一煎のお茶を待つ静かな一刻。時を刻むように、銀座での記憶が深く心に残る。旅人がまた訪れたくなる、時間の刻まれた場所。</p>
+      <p class="tagline tagline-green">「あなたの時間を、ここに刻む」</p>
+      <div class="seo-box seo-green">
+        <p class="seo-label c-green">SEO：問題なし</p>
+        銀座エリアに飲食店・カフェとしての競合なし。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S4: SEOクリーン 憶・跡 -->
+<div class="slide slide-cream" id="s4">
+  <div class="stripe"></div>
+  <p class="lbl c-green">SEOクリーン候補 — 2 / 2</p>
+  <div class="g2">
+    <div class="card card-green">
+      <div class="card-head">
+        <span class="kanji c-green">憶</span>
+        <span class="roman">OKU</span>
+        <span class="badge" style="background:var(--gp); color:var(--gm);">✅ 銀座クリア</span>
+      </div>
+      <p class="concept">旅の記憶は、その場所で飲んだお茶の香りとともに蘇る。「栞」の後継コンセプト。東京・銀座の記憶を、世界中の旅人の心に刻む和カフェ。</p>
+      <p class="tagline tagline-green">「忘れられない味が、記憶になる」</p>
+      <div class="seo-box seo-green">
+        <p class="seo-label c-green">SEO：問題なし</p>
+        銀座エリアに飲食店・カフェとしての競合なし。
+      </div>
+    </div>
+    <div class="card card-green">
+      <div class="card-head">
+        <span class="kanji c-green">跡</span>
+        <span class="roman">ATO</span>
+        <span class="badge" style="background:var(--gp); color:var(--gm);">✅ 銀座クリア</span>
+      </div>
+      <p class="concept">旅人が残す足跡。何百年もの歴史が積み重なった銀座という地に、また新しい足跡が生まれる。訪れた人が世界に「跡」を持ち帰る。</p>
+      <p class="tagline tagline-green">「旅の証を、あなたの中に」</p>
+      <div class="seo-box seo-green">
+        <p class="seo-label c-green">SEO：問題なし</p>
+        銀座エリアに飲食店・カフェとしての競合なし。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S5: グレー 翠・雫 -->
+<div class="slide" id="s5">
+  <div class="stripe-amber"></div>
+  <p class="lbl c-amber">グレーゾーン候補 — 1 / 2</p>
+  <div class="g2">
+    <div class="card card-amber">
+      <div class="card-head">
+        <span class="kanji c-amber">翠</span>
+        <span class="roman">SUI</span>
+        <span class="badge" style="background:var(--amber-bg); color:var(--amber);">△ 要注意</span>
+      </div>
+      <p class="concept">宇治の茶畑に広がる深い翠色。その色をカップの中に閉じ込めた場所。THE日本の色。</p>
+      <p class="tagline tagline-amber">「日本の緑を、一杯に」</p>
+      <div class="seo-box seo-amber">
+        <p class="seo-label c-amber">SEO：競合あり（グレー）</p>
+        銀座7丁目にクラブ「粋 sui.（スイ）」が2025年3月移転オープン。漢字は異なるが読みと発音が同一のため「銀座 sui カフェ」での検索で混在リスクあり。
+      </div>
+    </div>
+    <div class="card card-amber">
+      <div class="card-head">
+        <span class="kanji c-amber">雫</span>
+        <span class="roman">SHIZUKU</span>
+        <span class="badge" style="background:var(--amber-bg); color:var(--amber);">△ 要注意</span>
+      </div>
+      <p class="concept">お茶の葉から滴り落ちる一雫。茶道における「一期一会」を、その一滴に凝縮する。シンプルで美しい音の響きは外国人にも伝わる。</p>
+      <p class="tagline tagline-amber">「一雫に、日本の時間が宿る」</p>
+      <div class="seo-box seo-amber">
+        <p class="seo-label c-amber">SEO：競合あり（グレー）</p>
+        銀座エリアの直接競合はないが「CAFE 雫」「雫家」など全国に同名カフェが多数存在。一般名詞的な使われ方が多く差別化に工夫が必要。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S6: グレー 想 -->
+<div class="slide" id="s6">
+  <div class="stripe-amber"></div>
+  <p class="lbl c-amber">グレーゾーン候補 — 2 / 2</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; height:calc(100vh - 18vh - 100px);">
+    <div class="card card-amber">
+      <div class="card-head">
+        <span class="kanji c-amber">想</span>
+        <span class="roman">SO</span>
+        <span class="badge" style="background:var(--amber-bg); color:var(--amber);">△ 要注意</span>
+      </div>
+      <p class="concept">旅の途中で想う。故郷を、大切な人を、美しい景色を。銀座の和カフェが、旅人の「想い」の中継地点になる。日本への想いを育てる場所。</p>
+      <p class="tagline tagline-amber">「想いは、お茶の香りとともに旅をする」</p>
+      <div class="seo-box seo-amber">
+        <p class="seo-label c-amber">SEO：競合あり（グレー）</p>
+        東銀座に「SO CAFE（現：SONOKO CAFE 銀座店）」が存在。改名済みとはいえ旧店名での検索流入が残っており混在リスクあり。
+      </div>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:center;"></div>
+  </div>
+</div>
+
+<!-- S7: レッド 粋・凛 -->
+<div class="slide slide-cream" id="s7">
+  <div class="stripe-red"></div>
+  <p class="lbl c-red">レッドゾーン（参考・コンセプトのみ）— 1 / 2</p>
+  <div class="g2">
+    <div class="card card-red">
+      <div class="card-head">
+        <span class="kanji c-red">粋</span>
+        <span class="roman">IKI</span>
+        <span class="badge" style="background:var(--red-bg); color:var(--red);">❌ NG</span>
+      </div>
+      <p class="concept">江戸・東京が生んだ美意識「粋」。過剰を削ぎ落とした先にある洗練。銀座という街そのものが体現する価値観を店名に。外国人には「Cool」と訳される。</p>
+      <p class="tagline tagline-red">「引き算の美学が、ここにある」</p>
+      <div class="seo-box seo-red">
+        <p class="seo-label c-red">SEO：使用不可レベル</p>
+        銀座・新橋に創作和食「粋 IKI」＋高級クラブ「粋 sui.」＋美容室グループ「株式会社粋（iki group）」。三重競合。
+      </div>
+    </div>
+    <div class="card card-red">
+      <div class="card-head">
+        <span class="kanji c-red">凛</span>
+        <span class="roman">RIN</span>
+        <span class="badge" style="background:var(--red-bg); color:var(--red);">❌ NG</span>
+      </div>
+      <p class="concept">凛とした空気感。茶室に入った瞬間の、背筋が伸びる感覚。慌ただしい朝も、ここではゆっくりと凛々しく始められる。世界中の女性に刺さる響き。</p>
+      <p class="tagline tagline-red">「凛とした朝を、あなたに」</p>
+      <div class="seo-box seo-red">
+        <p class="seo-label c-red">SEO：使用不可レベル</p>
+        銀座4丁目に「炭火焙煎珈琲・凛（COFFEE RIN）」本店＋東銀座にeast+店。銀座エリアに2店舗展開する直接競合カフェチェーン。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S8: レッド 碧・縁 -->
+<div class="slide slide-cream" id="s8">
+  <div class="stripe-red"></div>
+  <p class="lbl c-red">レッドゾーン（参考・コンセプトのみ）— 2 / 2</p>
+  <div class="g2">
+    <div class="card card-red">
+      <div class="card-head">
+        <span class="kanji c-red">碧</span>
+        <span class="roman">HEKI</span>
+        <span class="badge" style="background:var(--red-bg); color:var(--red);">❌ NG</span>
+      </div>
+      <p class="concept">深い青緑、翡翠の色。抹茶と空の間にある色。京都の寺院の苔、奈良の緑、宇治の茶畑。日本の原風景をひとつの色に凝縮した名前。</p>
+      <p class="tagline tagline-red">「日本の原色を、ここで」</p>
+      <div class="seo-box seo-red">
+        <p class="seo-label c-red">SEO：使用不可レベル</p>
+        銀座三越新館12階に鉄板焼きステーキレストラン「碧（HEKI）」。銀座三越という超高トラフィック施設内のため検索上位を占有されており極めて不利。
+      </div>
+    </div>
+    <div class="card card-red">
+      <div class="card-head">
+        <span class="kanji c-red">縁</span>
+        <span class="roman">ENISHI</span>
+        <span class="badge" style="background:var(--red-bg); color:var(--red);">❌ NG</span>
+      </div>
+      <p class="concept">縁あってここに来た。旅人と銀座の縁、お茶との縁、日本との縁。一杯のお茶が結ぶ、国を越えた縁。インバウンドコンセプトとして最も強い言葉。</p>
+      <p class="tagline tagline-red">「出会いはすべて、縁から始まる」</p>
+      <div class="seo-box seo-red">
+        <p class="seo-label c-red">SEO：使用不可レベル</p>
+        銀座に飲食店「縁（えにし）」が多数存在。「銀座 縁 カフェ」での検索で埋没する可能性大。
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>←</button>
+  <div class="dots" id="dots"></div>
+  <button class="nav-btn" id="nextBtn" onclick="navigate(1)">→</button>
+</div>
+<div class="counter" id="counter">1 / 8</div>
+<div class="copyright" id="copyright">© Shime CaVa Branding Works</div>
+
+<script>
+const TOTAL=8; let cur=0;
+const deck=document.getElementById('deck'),dotsEl=document.getElementById('dots'),counter=document.getElementById('counter'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),cpEl=document.getElementById('copyright');
+deck.style.width=`calc(100vw * ${TOTAL})`;
+for(let i=0;i<TOTAL;i++){const d=document.createElement('div');d.className='dot'+(i===0?' on':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d);}
+function goTo(n){cur=Math.max(0,Math.min(TOTAL-1,n));deck.style.transform=`translateX(-${cur*100}vw)`;counter.textContent=`${cur+1} / ${TOTAL}`;prevBtn.disabled=cur===0;nextBtn.disabled=cur===TOTAL-1;document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===cur));cpEl.style.display=cur===0?'none':'block';}
+function navigate(d){goTo(cur+d);}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown')navigate(1);if(e.key==='ArrowLeft'||e.key==='ArrowUp')navigate(-1);});
+let sx=0;
+document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;});
+document.addEventListener('touchend',e=>{const dx=sx-e.changedTouches[0].clientX;if(Math.abs(dx)>50)navigate(dx>0?1:-1);});
+</script>
+</body>
+</html>
