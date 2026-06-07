@@ -37,14 +37,12 @@ body { font-family:'Noto Sans JP',sans-serif; background:#1a1a1a; overflow:hidde
 .slide-cream { background:var(--cream); }
 .slide-dark  { background:var(--gd); }
 
-/* left stripe */
 .stripe {
   position:absolute; left:0; top:0;
   width:5px; height:100%;
   background:var(--gd);
 }
 
-/* navigation */
 .nav {
   position:fixed; bottom:28px; left:50%;
   transform:translateX(-50%);
@@ -76,8 +74,14 @@ body { font-family:'Noto Sans JP',sans-serif; background:#1a1a1a; overflow:hidde
   font-family:'EB Garamond',serif;
   z-index:200;
 }
+.copyright {
+  position:fixed; bottom:32px; right:28px;
+  font-size:11px; letter-spacing:0.08em;
+  color:rgba(120,120,120,0.5);
+  z-index:200;
+  display:none;
+}
 
-/* ── type scale ── */
 .lbl {
   font-size:11px; font-weight:700;
   letter-spacing:0.22em; text-transform:uppercase;
@@ -106,7 +110,6 @@ body { font-family:'Noto Sans JP',sans-serif; background:#1a1a1a; overflow:hidde
 .kw { font-weight:700; color:var(--gd); }
 .kw-r { font-weight:700; color:var(--red); }
 
-/* ── components ── */
 .hr { width:100%; height:1px; background:var(--line); margin:20px 0; }
 
 .qbox {
@@ -124,7 +127,7 @@ body { font-family:'Noto Sans JP',sans-serif; background:#1a1a1a; overflow:hidde
   margin:20px 0;
 }
 .dbox {
-  background:#1c1c1a; color:#e5e5e3;
+  background:#1c1c1a; color:#fff;
   padding:22px 28px; border-radius:10px;
 }
 
@@ -137,9 +140,8 @@ body { font-family:'Noto Sans JP',sans-serif; background:#1a1a1a; overflow:hidde
   background:#fff;
 }
 .card-g { background:var(--gp); border:1px solid #c8d8c0; border-radius:10px; padding:24px; }
-.card-d { background:#1c1c1a; border-radius:10px; padding:24px; color:#e5e5e3; }
+.card-d { background:#1c1c1a; border-radius:10px; padding:24px; }
 
-/* table */
 .tbl { width:100%; border-collapse:collapse; }
 .tbl th {
   background:var(--gp); color:var(--gd);
@@ -154,7 +156,6 @@ body { font-family:'Noto Sans JP',sans-serif; background:#1a1a1a; overflow:hidde
 }
 .tbl tr:nth-child(even) td { background:#fafaf8; }
 
-/* swatch */
 .sw-row {
   display:flex; align-items:center; gap:18px;
   padding:16px 0; border-bottom:1px solid #f0f0ee;
@@ -164,7 +165,6 @@ body { font-family:'Noto Sans JP',sans-serif; background:#1a1a1a; overflow:hidde
   border:1px solid rgba(0,0,0,0.08); flex-shrink:0;
 }
 
-/* facade */
 .fi {
   display:flex; gap:14px; padding:15px 0;
   border-bottom:1px solid #f0f0ee; align-items:flex-start;
@@ -176,7 +176,6 @@ body { font-family:'Noto Sans JP',sans-serif; background:#1a1a1a; overflow:hidde
   font-size:13px; font-weight:700; flex-shrink:0; margin-top:2px;
 }
 
-/* checklist */
 .ci {
   display:flex; gap:14px; padding:14px 0;
   border-bottom:1px solid #f0f0ee; align-items:flex-start;
@@ -194,8 +193,9 @@ ul.list li {
   line-height:1.75; color:#374151;
 }
 ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
+ul.list.white li { color:#fff; }
+ul.list.white li::before { color:rgba(255,255,255,0.5); }
 
-/* axis label */
 .axlbl {
   font-size:10px; font-weight:700;
   letter-spacing:0.2em; text-transform:uppercase;
@@ -206,7 +206,7 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
 <body>
 <div class="deck" id="deck">
 
-<!-- ══ S1: COVER ══ -->
+<!-- S1: COVER -->
 <div class="slide" id="s1" style="justify-content:center; align-items:flex-start; padding:0 10vw;">
   <div class="stripe"></div>
   <div style="max-width:660px;">
@@ -216,16 +216,14 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
     <p style="font-size:11px; font-weight:700; color:var(--gray); letter-spacing:0.2em; margin-bottom:40px;">VER.1.01</p>
     <div style="width:44px; height:2px; background:var(--gd);"></div>
   </div>
-  <p style="position:absolute; bottom:32px; right:44px; font-size:11px; letter-spacing:0.15em; color:#bbb; text-transform:uppercase;">CAMETRUE</p>
 </div>
 
-<!-- ══ S2: ブランドコア ══ -->
+<!-- S2: ブランドコア -->
 <div class="slide" id="s2">
   <div class="stripe"></div>
   <p class="lbl">01 — Brand Core</p>
   <h2 class="ttl">ブランドコア</h2>
   <div class="hr" style="margin-bottom:24px;"></div>
-
   <table class="tbl" style="margin-bottom:24px;">
     <tbody>
       <tr>
@@ -246,19 +244,17 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
       </tr>
     </tbody>
   </table>
-
   <div class="qbox">
     <p class="body">パブリックスタンドの持つ<span class="kw">「社交・賑わい（動）」</span>に、和カフェの<span class="kw">「静寂・上質（静）」</span>を掛け合わせる。既存のアイドルタイム（10:00〜17:00）を最大化し、昼夜で全く異なる顔を持つ<span class="kw">二毛作業態</span>として構築する。</p>
   </div>
 </div>
 
-<!-- ══ S3: 世界観3軸 ══ -->
+<!-- S3: 世界観3軸 -->
 <div class="slide slide-cream" id="s3">
   <div class="stripe"></div>
   <p class="lbl">02 — World View</p>
   <h2 class="ttl">世界観の方向性（3軸）</h2>
   <div class="hr" style="margin-bottom:24px;"></div>
-
   <div class="g3">
     <div class="card">
       <p class="axlbl" style="color:var(--gm);">軸 1</p>
@@ -290,61 +286,47 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
   </div>
 </div>
 
-<!-- ══ S4: カラーパレット ══ -->
+<!-- S4: カラーパレット -->
 <div class="slide" id="s4">
   <div class="stripe"></div>
   <p class="lbl">03 — Color Palette</p>
   <h2 class="ttl">カラーパレット案</h2>
   <div class="hr" style="margin-bottom:24px;"></div>
-
   <div style="max-width:700px;">
     <div class="sw-row">
       <div class="sw" style="background:#4a5d23;"></div>
-      <div style="flex:1;">
-        <p class="strong" style="font-size:15px; margin-bottom:4px;">メインカラー — 深緑（抹茶色）</p>
-        <p class="body-sm">専門性・本格感。ロゴ・のれん・主要テキスト</p>
-      </div>
+      <div style="flex:1;"><p class="strong" style="font-size:15px; margin-bottom:4px;">メインカラー — 深緑（抹茶色）</p><p class="body-sm">専門性・本格感。ロゴ・のれん・主要テキスト</p></div>
       <p style="font-size:12px; color:#bbb; font-family:'EB Garamond',serif;">#4a5d23</p>
     </div>
     <div class="sw-row">
       <div class="sw" style="background:#c0392b;"></div>
-      <div style="flex:1;">
-        <p class="strong" style="font-size:15px; margin-bottom:4px;">アクセントカラー — 朱赤</p>
-        <p class="body-sm">和・エネルギー・映え。赤畳・椅子・強調要素</p>
-      </div>
+      <div style="flex:1;"><p class="strong" style="font-size:15px; margin-bottom:4px;">アクセントカラー — 朱赤</p><p class="body-sm">和・エネルギー・映え。赤畳・椅子・強調要素</p></div>
       <p style="font-size:12px; color:#bbb; font-family:'EB Garamond',serif;">#c0392b</p>
     </div>
     <div class="sw-row">
       <div class="sw" style="background:#fdfbf5; border:1px solid #ddd;"></div>
-      <div style="flex:1;">
-        <p class="strong" style="font-size:15px; margin-bottom:4px;">ベースカラー — 白・生成り</p>
-        <p class="body-sm">清潔感・昼の明るさ。壁・制服・背景</p>
-      </div>
+      <div style="flex:1;"><p class="strong" style="font-size:15px; margin-bottom:4px;">ベースカラー — 白・生成り</p><p class="body-sm">清潔感・昼の明るさ。壁・制服・背景</p></div>
       <p style="font-size:12px; color:#bbb; font-family:'EB Garamond',serif;">#fdfbf5</p>
     </div>
     <div class="sw-row" style="border-bottom:none;">
       <div class="sw" style="background:#2d2d2d;"></div>
-      <div style="flex:1;">
-        <p class="strong" style="font-size:15px; margin-bottom:4px;">補助カラー — 墨色</p>
-        <p class="body-sm">品格・引き締め。テキスト・縁取り</p>
-      </div>
+      <div style="flex:1;"><p class="strong" style="font-size:15px; margin-bottom:4px;">補助カラー — 墨色</p><p class="body-sm">品格・引き締め。テキスト・縁取り</p></div>
       <p style="font-size:12px; color:#bbb; font-family:'EB Garamond',serif;">#2d2d2d</p>
     </div>
   </div>
 </div>
 
-<!-- ══ S5: ターゲット ══ -->
+<!-- S5: ターゲット -->
 <div class="slide slide-cream" id="s5">
   <div class="stripe"></div>
   <p class="lbl">04 — Target Persona</p>
   <h2 class="ttl">ターゲットペルソナ</h2>
   <p class="sub">2つのペルソナを軸に設計する</p>
-
   <div class="g2">
     <div class="card-d">
       <p class="lbl" style="color:#f59e0b;">Persona A / 主軸</p>
       <h3 style="font-family:'Noto Serif JP',serif; font-size:clamp(18px,2vw,24px); font-weight:700; color:#fff; margin-bottom:16px;">インバウンド</h3>
-      <ul class="list" style="color:#fff;">
+      <ul class="list white">
         <li>欧米・東南アジアからの訪日観光客</li>
         <li>銀座・築地エリアを回遊中</li>
         <li>「本物の日本体験」を求めている</li>
@@ -355,7 +337,7 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
     <div class="card-g">
       <p class="lbl">Persona B / 副軸</p>
       <h3 style="font-family:'Noto Serif JP',serif; font-size:clamp(18px,2vw,24px); font-weight:700; color:var(--gd); margin-bottom:16px;">銀座の昼の客</h3>
-      <ul class="list" style="color:#374151;">
+      <ul class="list">
         <li>50〜70代、女性中心</li>
         <li>ショッピング・観劇の合間の休憩</li>
         <li>クオリティと落ち着きを求める</li>
@@ -366,13 +348,12 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
   </div>
 </div>
 
-<!-- ══ S6: ブランドボイス ══ -->
+<!-- S6: ブランドボイス -->
 <div class="slide" id="s6">
   <div class="stripe"></div>
   <p class="lbl">05 — Brand Voice</p>
   <h2 class="ttl">ブランドボイス（言葉のトーン）</h2>
   <div class="hr" style="margin-bottom:24px;"></div>
-
   <table class="tbl" style="margin-bottom:32px; max-width:680px;">
     <tbody>
       <tr>
@@ -385,42 +366,34 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
       </tr>
     </tbody>
   </table>
-
   <div class="qbox" style="max-width:680px;">
     <p style="font-size:11px; font-weight:700; color:var(--gm); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:14px;">Copy Example</p>
-    <p style="font-family:'Noto Serif JP',serif; font-size:clamp(17px,2.2vw,26px); font-weight:700; color:var(--ink); margin-bottom:12px;">
-      「炭火で、自分で焼く。それだけで、旅になる。」
-    </p>
-    <p style="font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(15px,1.6vw,20px); color:var(--gray);">
-      "Grill your own. Taste the real Japan."
-    </p>
+    <p style="font-family:'Noto Serif JP',serif; font-size:clamp(17px,2.2vw,26px); font-weight:700; color:var(--ink); margin-bottom:12px;">「炭火で、自分で焼く。それだけで、旅になる。」</p>
+    <p style="font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(15px,1.6vw,20px); color:var(--gray);">"Grill your own. Taste the real Japan."</p>
   </div>
 </div>
 
-<!-- ══ S7: 二毛作・内装 ══ -->
+<!-- S7: 二毛作・内装 -->
 <div class="slide slide-cream" id="s7">
   <div class="stripe"></div>
   <p class="lbl">06 — Dual Brand Structure</p>
   <h2 class="ttl">二毛作構造 — 内装デザイン方針</h2>
   <p class="sub">大規模改修なしに既存素材を「和モダン」として再定義する</p>
-
   <div class="qbox" style="margin-bottom:20px;">
     <p class="body">店内の既存素材（<span class="kw">歯車・ゴールド・アイアン・ダークブラウン</span>）をそのまま活かした内装。スチームパンクの素材感は大正ロマンや「キル・ビル」的な和のエッジとも親和性が高い。<span class="kw">この既存資産をゼロコストで和の演出に転用する。</span></p>
   </div>
-
   <div class="rbox">
     <p style="font-size:12px; font-weight:700; color:var(--red); margin-bottom:10px;">ファサードのミッション</p>
     <p class="body">現状の黄色×黒のギラついた外観を、<span class="kw-r">のれん等の「被せ」だけ</span>でランチタイムに一瞬で和カフェに見えるようにすること。完全に別の店舗として認識させる「二毛作」を実現する。</p>
   </div>
 </div>
 
-<!-- ══ S8: 昼夜切り替え ══ -->
+<!-- S8: 昼夜切り替え -->
 <div class="slide" id="s8">
   <div class="stripe"></div>
   <p class="lbl">06 — Day / Night</p>
   <h2 class="ttl">昼夜の切り替え設計</h2>
   <div class="hr" style="margin-bottom:24px;"></div>
-
   <div class="g2">
     <div class="card-g">
       <p class="lbl">昼 10:00 — 17:00</p>
@@ -437,7 +410,7 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
       <p class="lbl" style="color:#f59e0b;">夜 17:00 —</p>
       <h3 style="font-family:'Noto Serif JP',serif; font-size:clamp(18px,2vw,24px); font-weight:700; color:#fff; margin-bottom:8px;">Public Stand</h3>
       <p style="font-size:12px; font-weight:700; color:#f59e0b; margin-bottom:16px;">社交・スチームパンク・賑わい</p>
-      <ul class="list" style="color:#fff;">
+      <ul class="list white">
         <li>のれん撤去</li>
         <li>ギラつく夜の看板に復帰</li>
         <li>夜の制服・照明に切り替え</li>
@@ -447,52 +420,26 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
   </div>
 </div>
 
-<!-- ══ S9: ファサード4点 ══ -->
+<!-- S9: ファサード4点 -->
 <div class="slide slide-cream" id="s9">
   <div class="stripe"></div>
   <p class="lbl">07 — Facade</p>
   <h2 class="ttl">ファサード演出 — 最優先4点セット</h2>
   <p class="sub">この組み合わせで「京都の茶屋」として別業態認識させられる</p>
-
   <div>
-    <div class="fi">
-      <div class="fn">1</div>
-      <div>
-        <p class="strong" style="font-size:16px; margin-bottom:5px;">のれん</p>
-        <p class="body-sm">「和の店」を一目で伝える最強の記号。白×深緑・大きめサイズで看板を隠す効果も。営業後は撤去。</p>
-      </div>
-    </div>
-    <div class="fi">
-      <div class="fn">2</div>
-      <div>
-        <p class="strong" style="font-size:16px; margin-bottom:5px;">提灯</p>
-        <p class="body-sm">インバウンドが最も直感的に「和」と認識する記号。赤か白。入口上部に吊るすだけ。コスト極小。</p>
-      </div>
-    </div>
-    <div class="fi">
-      <div class="fn">3</div>
-      <div>
-        <p class="strong" style="font-size:16px; margin-bottom:5px;">赤い番傘</p>
-        <p class="body-sm">京都の茶屋感を一瞬で演出。SNS映えも強い。開いた状態で入口横に1本置くだけ。</p>
-      </div>
-    </div>
-    <div class="fi" style="border-bottom:none;">
-      <div class="fn">4</div>
-      <div>
-        <p class="strong" style="font-size:16px; margin-bottom:5px;">筆文字黒板</p>
-        <p class="body-sm">「何の店か」を外から即座に伝える。「抹茶」「お団子」「御膳」を筆文字風で。英語併記でインバウンドにも。</p>
-      </div>
-    </div>
+    <div class="fi"><div class="fn">1</div><div><p class="strong" style="font-size:16px; margin-bottom:5px;">のれん</p><p class="body-sm">「和の店」を一目で伝える最強の記号。白×深緑・大きめサイズで看板を隠す効果も。営業後は撤去。</p></div></div>
+    <div class="fi"><div class="fn">2</div><div><p class="strong" style="font-size:16px; margin-bottom:5px;">提灯</p><p class="body-sm">インバウンドが最も直感的に「和」と認識する記号。赤か白。入口上部に吊るすだけ。コスト極小。</p></div></div>
+    <div class="fi"><div class="fn">3</div><div><p class="strong" style="font-size:16px; margin-bottom:5px;">赤い番傘</p><p class="body-sm">京都の茶屋感を一瞬で演出。SNS映えも強い。開いた状態で入口横に1本置くだけ。</p></div></div>
+    <div class="fi" style="border-bottom:none;"><div class="fn">4</div><div><p class="strong" style="font-size:16px; margin-bottom:5px;">筆文字黒板</p><p class="body-sm">「何の店か」を外から即座に伝える。「抹茶」「お団子」「御膳」を筆文字風で。英語併記でインバウンドにも。</p></div></div>
   </div>
 </div>
 
-<!-- ══ S10: ファサード追加 ══ -->
+<!-- S10: ファサード追加 -->
 <div class="slide" id="s10">
   <div class="stripe"></div>
   <p class="lbl">07 — Facade +</p>
   <h2 class="ttl">ファサード演出 — 追加要素</h2>
   <div class="hr" style="margin-bottom:24px;"></div>
-
   <div class="g2" style="margin-bottom:24px;">
     <ul class="list">
       <li><span class="strong">竹の鉢植え</span> — 入口両脇に設置。竹柄パネルとも呼応し一体感が生まれる</li>
@@ -505,20 +452,18 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
       <li><span class="strong">照明の昼夜切り替え</span> — ギラつくゴールドを昼だけ自然光系に変更</li>
     </ul>
   </div>
-
   <div class="dbox">
     <p style="font-size:12px; font-weight:700; color:#f59e0b; margin-bottom:10px;">ポイント</p>
     <p class="body" style="color:#fff;">のれん＋提灯＋番傘＋筆文字黒板の<span style="color:#f59e0b; font-weight:700;">4点セット</span>だけで、あの黄色×黒の外観でもランチタイムに「京都の茶屋」として認識させることが可能。いずれも撤去可能なため夜のPublic Standへの切り替えもスムーズ。</p>
   </div>
 </div>
 
-<!-- ══ S11: 確認事項 ══ -->
+<!-- S11: 確認事項 -->
 <div class="slide slide-cream" id="s11">
   <div class="stripe"></div>
   <p class="lbl">08 — Next Steps</p>
   <h2 class="ttl">今後のヒアリング・確認事項</h2>
   <p class="sub">月曜会議で確認・決定したい項目</p>
-
   <div style="max-width:700px;">
     <div class="ci"><div class="cb"></div><p>店名・屋号の最終決定（「栞」で確定か、他の候補はあるか）</p></div>
     <div class="ci"><div class="cb"></div><p>ロゴのデザイン方向性（和文のみ・英文併記・シンボルマークの有無）</p></div>
@@ -528,7 +473,7 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
   </div>
 </div>
 
-<!-- ══ S12: END ══ -->
+<!-- S12: END -->
 <div class="slide slide-dark" id="s12" style="justify-content:center; align-items:flex-start; padding:0 10vw;">
   <div style="max-width:660px;">
     <p style="font-size:11px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:28px;">THE Public Stand</p>
@@ -537,7 +482,7 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
     <p style="font-size:11px; font-weight:700; color:rgba(255,255,255,0.4); letter-spacing:0.2em; margin-bottom:40px;">VER.1.01</p>
     <div style="width:44px; height:2px; background:rgba(255,255,255,0.3);"></div>
   </div>
-  <p style="position:absolute; bottom:32px; right:44px; font-size:11px; letter-spacing:0.15em; color:rgba(255,255,255,0.25); text-transform:uppercase;">CAMETRUE</p>
+  <p style="position:absolute; bottom:32px; right:44px; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.3);">© Shime CaVa Branding Works</p>
 </div>
 
 </div><!-- /deck -->
@@ -548,44 +493,18 @@ ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
   <button class="nav-btn" id="nextBtn" onclick="navigate(1)">→</button>
 </div>
 <div class="counter" id="counter">1 / 12</div>
+<div class="copyright" id="copyright">© Shime CaVa Branding Works</div>
 
 <script>
-const TOTAL = 12;
-let cur = 0;
-const deck = document.getElementById('deck');
-const dotsEl = document.getElementById('dots');
-const counter = document.getElementById('counter');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-for (let i = 0; i < TOTAL; i++) {
-  const d = document.createElement('div');
-  d.className = 'dot' + (i === 0 ? ' on' : '');
-  d.onclick = () => goTo(i);
-  dotsEl.appendChild(d);
-}
-
-function goTo(n) {
-  cur = Math.max(0, Math.min(TOTAL - 1, n));
-  deck.style.transform = `translateX(-${cur * 100}vw)`;
-  counter.textContent = `${cur + 1} / ${TOTAL}`;
-  prevBtn.disabled = cur === 0;
-  nextBtn.disabled = cur === TOTAL - 1;
-  document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('on', i === cur));
-}
-function navigate(d) { goTo(cur + d); }
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') navigate(1);
-  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   navigate(-1);
-});
-
-let sx = 0;
-document.addEventListener('touchstart', e => { sx = e.touches[0].clientX; });
-document.addEventListener('touchend', e => {
-  const dx = sx - e.changedTouches[0].clientX;
-  if (Math.abs(dx) > 50) navigate(dx > 0 ? 1 : -1);
-});
+const TOTAL=12; let cur=0;
+const deck=document.getElementById('deck'),dotsEl=document.getElementById('dots'),counter=document.getElementById('counter'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),cpEl=document.getElementById('copyright');
+for(let i=0;i<TOTAL;i++){const d=document.createElement('div');d.className='dot'+(i===0?' on':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d);}
+function goTo(n){cur=Math.max(0,Math.min(TOTAL-1,n));deck.style.transform=`translateX(-${cur*100}vw)`;counter.textContent=`${cur+1} / ${TOTAL}`;prevBtn.disabled=cur===0;nextBtn.disabled=cur===TOTAL-1;document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===cur));cpEl.style.display=cur===0?'none':'block';}
+function navigate(d){goTo(cur+d);}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown')navigate(1);if(e.key==='ArrowLeft'||e.key==='ArrowUp')navigate(-1);});
+let sx=0;
+document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;});
+document.addEventListener('touchend',e=>{const dx=sx-e.changedTouches[0].clientX;if(Math.abs(dx)>50)navigate(dx>0?1:-1);});
 </script>
 </body>
 </html>
