@@ -1,1 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>店舗コンセプトの刷新について — 2026年6月8日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gd: #1d3d1a;
+  --gm: #2e5c2a;
+  --gp: #f2f6f0;
+  --red: #b5302a;
+  --amber: #9a6c1a;
+  --ink: #1a1a18;
+  --gray: #5a6472;
+  --line: #e2e8df;
+  --cream: #fdfbf6;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans JP',sans-serif; background:#1a1a1a; overflow:hidden; width:100vw; height:100vh; }
+.deck { display:flex; height:100vh; transition:transform 0.55s cubic-bezier(0.77,0,0.175,1); }
+.slide { width:100vw; height:100vh; flex-shrink:0; display:flex; flex-direction:column; justify-content:center; padding:5vh 9vw 8vh; position:relative; overflow:hidden; background:#fff; }
+.slide-cream { background:var(--cream); }
+.slide-dark { background:var(--gd); }
+.stripe { position:absolute; left:0; top:0; width:5px; height:100%; background:var(--gd); }
+.nav { position:fixed; bottom:28px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:14px; z-index:200; }
+.nav-btn { width:40px; height:40px; border-radius:50%; border:1.5px solid rgba(255,255,255,0.25); background:rgba(30,30,30,0.6); color:white; font-size:16px; cursor:pointer; backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+.nav-btn:hover { background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.5); }
+.nav-btn:disabled { opacity:0.25; cursor:default; }
+.dots { display:flex; gap:6px; }
+.dot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.25); cursor:pointer; transition:all 0.25s; }
+.dot.on { background:#fff; width:18px; border-radius:3px; }
+.counter { position:fixed; top:22px; right:28px; font-size:12px; letter-spacing:0.08em; color:rgba(255,255,255,0.35); font-family:'EB Garamond',serif; z-index:200; }
+.copyright { position:fixed; bottom:32px; right:28px; font-size:11px; letter-spacing:0.08em; color:rgba(120,120,120,0.45); z-index:200; display:none; }
+.lbl { font-size:11px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--gm); margin-bottom:14px; }
+.ttl { font-family:'Noto Serif JP',serif; font-size:clamp(24px,3vw,40px); font-weight:700; color:var(--ink); line-height:1.35; margin-bottom:10px; }
+.sub { font-size:clamp(13px,1.3vw,15px); color:var(--gray); line-height:1.7; margin-bottom:20px; }
+.body { font-size:clamp(14px,1.4vw,16px); color:#374151; line-height:1.85; }
+.body-sm { font-size:clamp(13px,1.2vw,15px); color:#4b5563; line-height:1.8; }
+.strong { font-weight:700; color:var(--ink); }
+.kw { font-weight:700; color:var(--gd); }
+.hr { width:100%; height:1px; background:var(--line); margin:16px 0; }
+.qbox { border-left:3px solid var(--gm); padding:16px 22px; background:var(--gp); border-radius:0 8px 8px 0; margin:12px 0; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+.card { border:1px solid var(--line); border-radius:10px; padding:20px; background:#fff; }
+.card-g { background:var(--gp); border:1px solid #c8d8c0; border-radius:10px; padding:20px; }
+ul.list { list-style:none; margin:0; padding:0; }
+ul.list li { padding:4px 0; font-size:clamp(13px,1.2vw,15px); line-height:1.75; color:#374151; }
+ul.list li::before { content:"—"; color:var(--gm); margin-right:10px; }
+.tbl { width:100%; border-collapse:collapse; }
+.tbl th { background:var(--gp); color:var(--gd); font-weight:700; font-size:13px; padding:10px 14px; text-align:left; border:1px solid var(--line); }
+.tbl td { padding:10px 14px; border:1px solid var(--line); font-size:14px; color:#374151; vertical-align:top; line-height:1.7; }
+.tbl tr:nth-child(even) td { background:#fafaf8; }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
 
+<!-- S1: 表紙 -->
+<div class="slide" id="s1" style="justify-content:center; align-items:flex-start; padding:0 10vw;">
+  <div class="stripe"></div>
+  <div style="max-width:700px;">
+    <p style="font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--gm); margin-bottom:20px;">THE Public Stand</p>
+    <h1 style="font-family:'Noto Serif JP',serif; font-size:clamp(32px,4.5vw,60px); font-weight:700; color:var(--gd); line-height:1.3; margin-bottom:16px;">店舗コンセプトの<br>刷新について</h1>
+    <p style="font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(16px,1.8vw,22px); color:var(--gm); letter-spacing:0.1em; margin-bottom:12px;">会議録 — 2026年6月8日</p>
+    <div style="width:44px; height:2px; background:var(--gd);"></div>
+  </div>
+</div>
+
+<!-- S2: 店名・ロゴ決定 -->
+<div class="slide slide-cream" id="s2">
+  <div class="stripe"></div>
+  <p class="lbl">01 — 店名・ロゴ</p>
+  <h2 class="ttl">店名・ロゴの決定</h2>
+  <div class="hr" style="margin-bottom:16px;"></div>
+  <table class="tbl" style="margin-bottom:20px;">
+    <tbody>
+      <tr>
+        <th style="width:20%;">店名</th>
+        <td>しおり・栞・SHIORI など、表記のバランスを検討中</td>
+      </tr>
+      <tr>
+        <th>表記</th>
+        <td>視覚的な親しみやすさとSNSでの使い勝手を考慮し、メインは<strong>ひらがな表記（しおり）</strong>とすることが合意。ローマ字・漢字を組み合わせたパターンも展開し、シールやスリーブなどの用途に合わせて使い分ける。</td>
+      </tr>
+      <tr>
+        <th>カラー</th>
+        <td><strong>緑・白・赤</strong>を基調とする（抹茶の緑、和の赤など）</td>
+      </tr>
+      <tr>
+        <th>店名の意味</th>
+        <td>「ブックマーク」という意味を込め、海外客にもそのニュアンス（しおりの由来やコンセプト）を伝える</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="qbox">
+    <p class="body-sm">「しおり（ブックマーク）」という意味を海外客にも伝えるため、<span class="kw">ストーリー性を持たせたキャプションやビジュアルとの連動</span>が重視されている。</p>
+  </div>
+</div>
+
+<!-- S3: デザイン方針 -->
+<div class="slide" id="s3">
+  <div class="stripe"></div>
+  <p class="lbl">02 — デザイン方針</p>
+  <h2 class="ttl">「振り切った和」のデザイン方針</h2>
+  <div class="hr" style="margin-bottom:16px;"></div>
+  <div class="g2">
+    <div>
+      <div class="qbox" style="margin-bottom:14px;">
+        <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:8px;">基本方針</p>
+        <p class="body-sm">インバウンド客や通行人が一目で「和風のカフェ」だと認識できる<span class="kw">「振り切った和」</span>のデザインを採用。銀座という立地に合わせた「品格」を<strong>2〜3割残しつつも、7割方は「和」に振り切る</strong>という絶妙なアンバランスさを狙う。</p>
+      </div>
+      <div class="qbox">
+        <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:8px;">戦略的「違和感」</p>
+        <p class="body-sm">周囲の環境に馴染ませるのではなく、あえて<span class="kw">「浮いた存在」</span>にすることで「この店は何だ？」と思わせる誘引力を生み出す。「少し胡散臭いくらいに振り切った和」がむしろ強みになる。</p>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:14px;">
+        <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:10px;">視線誘導の戦略</p>
+        <p class="body-sm">現在は通行人の視線が上に向きがちであるため、<span class="kw">ガラス面に漢字の文字情報（「創業何年」など）を入れる</span>ことで、視線を下に落とし、信頼感や興味を引く。</p>
+      </div>
+      <div class="card">
+        <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:10px;">既存内装の活用</p>
+        <p class="body-sm">店内の既存素材（歯車・ゴールド・アイアン・ダークブラウン）をそのまま活かす。スチームパンクの素材感は<span class="kw">大正ロマン</span>や「キル・ビル」的な和のエッジとも親和性が高い。この既存資産をゼロコストで和の演出に転用する。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S4: ファサード -->
+<div class="slide slide-cream" id="s4">
+  <div class="stripe"></div>
+  <p class="lbl">03 — ファサード</p>
+  <h2 class="ttl">ファサード（外観）設計</h2>
+  <p class="sub">通りを歩く人が一目で「和風のカフェ」と認識できることがミッション</p>
+  <div class="g2">
+    <div>
+      <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:10px;">「和」を象徴する記号の活用</p>
+      <ul class="list">
+        <li>大きな<strong>暖簾（のれん）</strong>：白×深緑・大きめサイズ。看板を隠す効果も。営業後は撤去。</li>
+        <li><strong>提灯</strong>：インバウンドが最も直感的に「和」と認識する記号。赤か白。入口上部に吊るすだけ。コスト極小。</li>
+        <li><strong>赤い番傘（野点傘）</strong>：京都の茶屋感を一瞬で演出。SNS映えも強い。開いた状態で入口横に1本置くだけ。</li>
+        <li><strong>竹・盆栽</strong>：緑を強調し抹茶のイメージを補強する。</li>
+        <li><strong>筆文字黒板</strong>：「抹茶」「お団子」「御膳」を筆文字風で。英語併記でインバウンドにも。</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:10px;">テラスの看板化</p>
+      <div class="card-g" style="margin-bottom:12px;">
+        <p class="body-sm">テラス席を単なる座席としてではなく、<span class="kw">「看板代わり」</span>として作り込む。テラスに赤い傘や和の装飾を施すことで、通りからの視認性とブランドイメージを劇的に向上させる。</p>
+      </div>
+      <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:10px;">追加要素</p>
+      <ul class="list">
+        <li>砂利・石 — 入口足元に少量置くだけで茶屋の入口感</li>
+        <li>行灯（あんどん）風ライト — 入口付近に置く</li>
+        <li>和紙調ウィンドウシート — ガラス内側に部分貼り</li>
+        <li>水引・家紋ステッカー — ガラス面に貼るだけ</li>
+        <li>照明の昼夜切り替え — ギラつくゴールドを昼だけ自然光系に変更</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- S5: 二毛作 -->
+<div class="slide" id="s5">
+  <div class="stripe"></div>
+  <p class="lbl">04 — 二毛作</p>
+  <h2 class="ttl">二毛作・昼夜の切り替え設計</h2>
+  <p class="sub">単に照明を変えるだけでなく、「別の店に見えるほどしっかり切り替える」ことがミッション</p>
+  <div class="g2">
+    <div class="card-g">
+      <p style="font-size:11px; font-weight:700; color:var(--gm); letter-spacing:0.1em; margin-bottom:8px;">昼 10:00 — 17:00</p>
+      <h3 style="font-family:'Noto Serif JP',serif; font-size:clamp(18px,2vw,24px); font-weight:700; color:var(--gd); margin-bottom:12px;">しおり（和カフェ）</h3>
+      <ul class="list">
+        <li>白と緑ののれん掲出</li>
+        <li>赤い番傘・竹・盆栽の配置</li>
+        <li>白ベースの明るい制服に着替え</li>
+        <li>A1サイズのポスター・内照式看板の差し替え</li>
+        <li>スイッチ一つで昇降するロール式の大きなのれん（天幕）の導入も検討</li>
+        <li>店内モニターで抹茶のブランドストーリーを3ヶ国語で発信</li>
+      </ul>
+    </div>
+    <div class="card" style="background:#1c1c1a;">
+      <p style="font-size:11px; font-weight:700; color:#f59e0b; letter-spacing:0.1em; margin-bottom:8px;">夜 17:00 —</p>
+      <h3 style="font-family:'Noto Serif JP',serif; font-size:clamp(18px,2vw,24px); font-weight:700; color:#fff; margin-bottom:12px;">Public Stand（バー）</h3>
+      <ul class="list" style="color:#d1d5db;">
+        <li style="color:#d1d5db;">のれん・番傘・天幕を撤去</li>
+        <li style="color:#d1d5db;">夜の制服・照明に切り替え</li>
+        <li style="color:#d1d5db;">看板をギラつく夜の顔に復帰</li>
+        <li style="color:#d1d5db;">モニターをスポーツ放送等に切り替え</li>
+        <li style="color:#d1d5db;">昼の体験客を夜に呼び込む送客導線を設計</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- S6: メニュー -->
+<div class="slide slide-cream" id="s6">
+  <div class="stripe"></div>
+  <p class="lbl">05 — メニュー</p>
+  <h2 class="ttl">メニュー構成</h2>
+  <p class="sub">抹茶というプロダクトに全面的に振り切る。中途半端にしない。</p>
+  <div class="g3">
+    <div class="card">
+      <p style="font-size:11px; font-weight:700; color:var(--gd); margin-bottom:8px;">ドリンク</p>
+      <ul class="list">
+        <li>ストレートな抹茶（丁寧に点てたもの）</li>
+        <li>抹茶ラテ（花の香りを混ぜたもの）</li>
+        <li>ココナッツウォーターで作る抹茶</li>
+        <li>冷製抹茶（その場で点ててから冷やして提供）</li>
+        <li>タピオカ（台湾茶・抹茶・ミルクフォームの組み合わせ）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p style="font-size:11px; font-weight:700; color:var(--amber); margin-bottom:8px;">フード・デザート</p>
+      <ul class="list">
+        <li>かき氷（テラス席での利用を想定）</li>
+        <li>一口菓子（フィナンシェなどを添えて提供）</li>
+      </ul>
+      <p style="font-size:11px; font-weight:700; color:var(--gd); margin-top:14px; margin-bottom:8px;">価格帯</p>
+      <p class="body-sm">1杯<strong>700〜800円</strong>程度を想定</p>
+    </div>
+    <div class="card-g">
+      <p style="font-size:11px; font-weight:700; color:var(--gd); margin-bottom:8px;">見せるオペレーション</p>
+      <p class="body-sm" style="margin-bottom:10px;">あらかじめ用意されたものではなく、<span class="kw">客の目の前で茶道具を使い1杯につき3分ほどかけて丁寧に点てる</span>プロセスを導入する。</p>
+      <p class="body-sm">スタッフが一生懸命に抹茶を混ぜる所作は通行人の目を引き、「並んででも買いたい」という心理的効果（アイキャッチ）を生むことも狙っている。「嘘っぽくない」本物感を演出する。</p>
+    </div>
+  </div>
+</div>
+
+<!-- S7: 体験価値・オペレーション -->
+<div class="slide" id="s7">
+  <div class="stripe"></div>
+  <p class="lbl">06 — 体験価値</p>
+  <h2 class="ttl">体験価値とオペレーション</h2>
+  <div class="hr" style="margin-bottom:16px;"></div>
+  <div class="g2">
+    <div>
+      <div class="qbox" style="margin-bottom:14px;">
+        <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:8px;">エンターテインメントとしての抹茶体験</p>
+        <p class="body-sm">単なる飲料の提供ではなく、<span class="kw">「抹茶を点てるプロセス」そのものを価値として提供</span>する。この「嘘っぽくない」本物感のある所作は、外国人観光客にとって大きな魅力となる。</p>
+      </div>
+      <div class="qbox">
+        <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:8px;">多言語によるストーリー発信</p>
+        <p class="body-sm">店内のモニターやSNS・動画コンテンツにおいて、<span class="kw">英語・中国語・日本語の3ヶ国語</span>で「しおり」のブランドストーリーや抹茶の製法を解説する。「しおり（ブックマーク）」という店名の由来・コンセプトを多言語で伝えることで、日本文化のニュアンスを含んだブランドとして認識させる。</p>
+      </div>
+    </div>
+    <div>
+      <div class="qbox" style="margin-bottom:14px;">
+        <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:8px;">制服・スタッフの所作</p>
+        <p class="body-sm">スタッフが和装（羽織など）で作業する場合の温度設定など、スタッフ目線と客目線の両方に配慮する。昼夜で制服を着替えることで、店舗のアイデンティティを明確にする。</p>
+      </div>
+      <div class="qbox">
+        <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:8px;">空調・環境整備</p>
+        <p class="body-sm">スタッフが和装で作業する場合や客目線を考慮し、店内の温度設定に配慮する。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S8: インバウンド戦略 -->
+<div class="slide slide-cream" id="s8">
+  <div class="stripe"></div>
+  <p class="lbl">07 — インバウンド戦略</p>
+  <h2 class="ttl">インバウンド集客戦略</h2>
+  <p class="sub">海外観光客が期待する「ステレオタイプなまでの日本らしさ」を視覚と体験の両面で提供する</p>
+  <div class="g2">
+    <div>
+      <ul class="list">
+        <li><span class="kw">「一目でわかる」ファサード戦略</span>：大きなのれん・畳・提灯・赤い傘・竹・盆栽といった和の記号を全面的に配置し、強力なアイキャッチを作る。</li>
+        <li><span class="kw">エンターテインメントとしての抹茶体験</span>：客の目の前で茶道具を使い1杯ずつ丁寧に（約3分かけて）抹茶を点てるパフォーマンスを行う。</li>
+        <li><span class="kw">3ヶ国語対応</span>：英語・中国語・日本語でブランドストーリーや抹茶の製法を発信する。</li>
+        <li><span class="kw">立地を活かした路面店戦略</span>：インバウンドの多い路面店という強みを活かし、通りがかりの観光客を確実に取り込む。昼は和カフェ、夜はバーという二毛作で時間帯に応じたインバウンド需要に応える。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card-g">
+        <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:10px;">期待感の醸成</p>
+        <p class="body-sm" style="margin-bottom:10px;">スタッフが一生懸命に抹茶を混ぜる様子は通行人の目を引き、「並んででも買いたい」という心理的効果を生むことも狙っている。</p>
+        <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:10px; margin-top:14px;">撮影スポットの設計</p>
+        <p class="body-sm">ドリンクを持って写真を撮りたくなるような場所を店内に設ける。来店そのものがSNSコンテンツになる設計を意識する。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S9: おもてなし・ノベルティ -->
+<div class="slide" id="s9">
+  <div class="stripe"></div>
+  <p class="lbl">08 — おもてなし・ノベルティ</p>
+  <h2 class="ttl">おもてなしとノベルティ</h2>
+  <div class="hr" style="margin-bottom:16px;"></div>
+  <div class="g2">
+    <div>
+      <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:12px;">日本らしさを感じさせる細かな演出</p>
+      <ul class="list" style="margin-bottom:20px;">
+        <li>ストローの差し込み口に<strong>「しおり」</strong>を付ける</li>
+        <li>トレイに<strong>折り紙</strong>を敷いて提供する</li>
+        <li>一口サイズの和菓子（フィナンシェ等）を添えて提供する</li>
+      </ul>
+      <div class="qbox">
+        <p class="body-sm">「日本に来た」という実感を高めるための細かな仕掛けを施す。</p>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:12px;">物販（スーベニア）</p>
+      <div class="card-g" style="margin-bottom:14px;">
+        <p class="body-sm">海外からの客が好みそうな、お茶や「和」をモチーフにした<span class="kw">オリジナルTシャツ</span>などのグッズを販売し、持ち帰れる思い出としての価値を提供する。</p>
+      </div>
+      <p style="font-size:13px; font-weight:700; color:var(--gd); margin-bottom:12px;">昼夜の相互送客</p>
+      <div class="card-g">
+        <p class="body-sm">昼のカフェ利用客に夜のPublic Standで使える<span class="kw">ウェルカムチケット（ファーストドリンク無料）</span>を手渡すなど、昼夜の送客導線を設計する。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S10: END -->
+<div class="slide slide-dark" id="s10" style="justify-content:center; align-items:flex-start; padding:0 10vw;">
+  <div style="max-width:700px;">
+    <p style="font-size:11px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:28px;">THE Public Stand</p>
+    <h2 style="font-family:'Noto Serif JP',serif; font-size:clamp(28px,3.5vw,52px); font-weight:700; color:#fff; line-height:1.3; margin-bottom:16px;">店舗コンセプトの<br>刷新について</h2>
+    <p style="font-family:'Noto Serif JP',serif; font-size:clamp(16px,1.8vw,22px); color:rgba(255,255,255,0.6); margin-bottom:12px;">会議録 — 2026年6月8日</p>
+    <div style="width:44px; height:2px; background:rgba(255,255,255,0.3); margin-bottom:36px;"></div>
+  </div>
+  <p style="position:absolute; bottom:32px; right:44px; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.25);">© Shime CaVa Branding Works</p>
+</div>
+
+</div><!-- /deck -->
+
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>←</button>
+  <div class="dots" id="dots"></div>
+  <button class="nav-btn" id="nextBtn" onclick="navigate(1)">→</button>
+</div>
+<div class="counter" id="counter">1 / 10</div>
+<div class="copyright" id="copyright">© Shime CaVa Branding Works</div>
+
+<script>
+const TOTAL=10; let cur=0;
+const deck=document.getElementById('deck'),dotsEl=document.getElementById('dots'),counter=document.getElementById('counter'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),cpEl=document.getElementById('copyright');
+deck.style.width=`calc(100vw * ${TOTAL})`;
+for(let i=0;i<TOTAL;i++){const d=document.createElement('div');d.className='dot'+(i===0?' on':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d);}
+function goTo(n){cur=Math.max(0,Math.min(TOTAL-1,n));deck.style.transform=`translateX(-${cur*100}vw)`;counter.textContent=`${cur+1} / ${TOTAL}`;prevBtn.disabled=cur===0;nextBtn.disabled=cur===TOTAL-1;document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===cur));cpEl.style.display=cur===0?'none':'block';}
+function navigate(d){goTo(cur+d);}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown')navigate(1);if(e.key==='ArrowLeft'||e.key==='ArrowUp')navigate(-1);});
+let sx=0;
+document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;});
+document.addEventListener('touchend',e=>{const dx=sx-e.changedTouches[0].clientX;if(Math.abs(dx)>50)navigate(dx>0?1:-1);});
+</script>
+</body>
+</html>
