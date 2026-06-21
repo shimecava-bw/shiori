@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>和カフェ 栞　プロジェクト資料</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #f9fafb; font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; }
+.header { background: #fff; padding: 40px 48px 36px; border-bottom: 0.5px solid #ddd; }
+.header h1 { font-size: 36px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+.header p { font-size: 15px; color: #888; }
+.container { max-width: 860px; margin: 0 auto; padding: 48px 48px 80px; }
+.section-block { background: #fff; border-radius: 12px; padding: 28px 28px 32px; margin-bottom: 32px; }
+.section-head { font-size: 22px; font-weight: 700; color: #1a1a1a; padding-bottom: 10px; border-bottom: 3px solid #1D9E75; margin-bottom: 20px; display: inline-block; }
+.link-row { display: flex; gap: 12px; }
+.link-card { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 16px 18px; flex: 1; text-decoration: none; display: block; }
+.link-card:hover { border-color: #aaa; }
+.link-card-label { display: inline-block; background: #1D9E75; color: #fff; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 99px; margin-bottom: 8px; letter-spacing: 0.05em; }
+.link-card-title { font-size: 16px; font-weight: 700; color: #1a1a1a; }
+.year-label { font-size: 14px; color: #aaa; margin-bottom: 14px; }
+.card { background: #fff; border: 0.5px solid #ddd; border-radius: 12px; padding: 22px 24px; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 24px; text-decoration: none; }
+.card:hover { border-color: #aaa; }
+.card.latest { background: #f0faf5; border: 2px solid #1D9E75; }
+.date-block { text-align: center; min-width: 52px; flex-shrink: 0; }
+.date-mon { font-size: 13px; font-weight: 700; color: #1D9E75; letter-spacing: 0.1em; }
+.date-day { font-size: 36px; font-weight: 700; color: #1D9E75; line-height: 1.1; }
+.card-body { flex: 1; }
+.card-title { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+.card-desc { font-size: 14px; color: #888; margin-bottom: 12px; line-height: 1.6; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-size: 12px; padding: 3px 10px; border-radius: 99px; }
+.tag-g { background: #E1F5EE; color: #085041; }
+.tag-b { background: #E6F1FB; color: #0C447C; }
+.badge { font-size: 13px; font-weight: 700; background: #1D9E75; color: #fff; padding: 4px 14px; border-radius: 99px; flex-shrink: 0; align-self: center; }
+.arrow { color: #ccc; align-self: center; flex-shrink: 0; font-size: 20px; }
+footer { font-size: 12px; color: #bbb; letter-spacing: 0.08em; margin-top: 56px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>和カフェ 栞　プロジェクト資料</h1>
+  <p>資料タイトルをクリックして開いてください。</p>
+</div>
+
+<div class="container">
+
+  <div class="section-block">
+    <p class="section-head">企画資料</p>
+    <div class="link-row">
+      <a href="design_concept/index.html" class="link-card">
+        <p class="link-card-label">CONCEPT</p>
+        <p class="link-card-title">デザインコンセプト →</p>
+      </a>
+      <a href="design_concept/image.html" class="link-card">
+        <p class="link-card-label">FACADE</p>
+        <p class="link-card-title">ファサード →</p>
+      </a>
+      <a href="https://drive.google.com/drive/folders/1WshqfyOfcenWq-4DaDoeHfSPswjeYZ5K?usp=drive_link" class="link-card" target="_blank" rel="noopener">
+        <p class="link-card-label">DRIVE ↗</p>
+        <p class="link-card-title">その他資料</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <p class="section-head">会議録</p>
+    <p class="year-label">2026年</p>
+
+    <a href="kaigi/0619.html" class="card latest">
+      <div class="date-block"><p class="date-mon">JUN</p><p class="date-day">19</p></div>
+      <div class="card-body">
+        <p class="card-title">ロゴ・ファサード確認会議</p>
+        <p class="card-desc">ロゴ最終確認 / ファサード仕様</p>
+        <div class="tags"><span class="tag tag-g">ロゴ確定</span><span class="tag tag-b">ファサード</span></div>
+      </div>
+      <span class="badge">LATEST</span>
+    </a>
+
+    <a href="kaigi/kaigi0608.html" class="card">
+      <div class="date-block"><p class="date-mon">JUN</p><p class="date-day">08</p></div>
+      <div class="card-body">
+        <p class="card-title">店舗コンセプトの刷新について</p>
+        <p class="card-desc">コンセプト方向性 / ターゲット設定</p>
+        <div class="tags"><span class="tag tag-b">コンセプト</span></div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+  </div>
+
+  <footer>© Shime CaVa Branding Works</footer>
+
+</div>
+</body>
+</html>
