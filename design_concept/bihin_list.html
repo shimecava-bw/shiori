@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>栞パッケージリスト</title>
+    <style>
+        body { font-family: Arial, "Noto Sans JP", sans-serif; background: #f7f8fa; margin: 0; padding: 24px; color: #222; }
+        h1 { font-size: 22px; }
+        .sheet { background: white; border: 1px solid #ddd; border-radius: 8px; overflow: auto; box-shadow: 0 2px 8px #ddd; }
+        table { border-collapse: collapse; min-width: 1100px; width: 100%; }
+        th { background: #f1f3f4; position: sticky; top: 0; z-index: 2; }
+        th, td { border: 1px solid #ddd; padding: 10px; white-space: nowrap; }
+        .category { background: #eef5ff; font-weight: bold; }
+        select, input { padding: 4px; border: 1px solid #bbb; border-radius: 4px; background: white; }
+        input { width: 100px; }
+    </style>
+</head>
+<body>
+    <h1>栞パッケージリスト</h1>
+    <div class="sheet">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>品名</th>
+                    <th>仕様・備考</th>
+                    <th>優先度</th>
+                    <th>概算コスト</th>
+                    <th>担当</th>
+                    <th>ステータス</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category">
+                    <td colspan="7">デッキ</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>野点傘（赤）</td>
+                    <td>デッキに1本、フォトスポット兼用</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>床几 × 2</td>
+                    <td>折りたたみ式、茶屋スタイル</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>毛氈（赤）</td>
+                    <td>床几に敷く赤フェルト</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>観葉植物</td>
+                    <td>竹・盆栽など：購入・レンタル・イミテーション</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr class="category">
+                    <td colspan="7">入口・外観</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>暖簾（のれん）</td>
+                    <td>白×深緑、大きめサイズ、入口用</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>割れ暖簾</td>
+                    <td></td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>提灯</td>
+                    <td>赤か白、入口上部に吊るす</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>しめ縄</td>
+                    <td></td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>行灯風ライト</td>
+                    <td>入口付近に設置</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>灯篭</td>
+                    <td></td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>砂利・石</td>
+                    <td>入口足元に少量</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>季節ものディスプレイ</td>
+                    <td>季節のイベント（さくら・門松等）掲出用ディスプレイ・スペース</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr class="category">
+                    <td colspan="7">ガラス面</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>ロールスクリーン</td>
+                    <td>和風・竹など</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>ロゴ・水引・家紋など</td>
+                    <td>ガラス面に貼る（カッティングシート）</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr class="category">
+                    <td colspan="7">サイネージ</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>ELシート / ポスター</td>
+                    <td>「抹茶」「お団子」「御膳」英語併記</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr class="category">
+                    <td colspan="7">空間演出・店内</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>季節の植物</td>
+                    <td>竹・盆栽など：購入・レンタル・イミテーション</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>季節ものディスプレイ</td>
+                    <td>季節のイベント（さくら・門松等）掲出用ディスプレイ・スペース</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>浮世絵風イラスト掲示</td>
+                    <td></td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>仏像・大仏など設置</td>
+                    <td></td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>しるし半纏・法被</td>
+                    <td>歴史を感じさせる藍染の風合い・額装展示</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>モニター動画配信</td>
+                    <td>3ヶ国語ブランドストーリー</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+                <tr class="category">
+                    <td colspan="7">その他</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>ユニフォーム一式</td>
+                    <td>シャツ、エプロン、和装小物など</td>
+                    <td><select><option></option><option>高</option><option>中</option><option>低</option></select></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><select><option>未着手</option><option>進行中</option><option>完了</option><option>保留</option></select></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
