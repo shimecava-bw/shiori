@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>店内装飾の演出について</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gd: #1a6b2a;
+  --gm: #1a6b2a;
+  --gp: #e8f5ec;
+  --red: #b5302a;
+  --ink: #111;
+  --gray: #555;
+  --light: #f7f7f5;
+  --line: #e0e0da;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Noto Sans JP',sans-serif;
+  background:#fff;
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.85;
+}
+
+/* レイアウト */
+.container { max-width:860px; margin:0 auto; padding:60px 40px 100px; }
+
+/* ヘッダー */
+.page-header { border-left:5px solid var(--gd); padding:0 0 0 24px; margin-bottom:56px; }
+.page-header .label { font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--gm); margin-bottom:10px; }
+.page-header h1 { font-size:clamp(26px,4vw,40px); font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:10px; }
+.page-header .meta { font-size:14px; color:var(--gray); }
+
+/* セクション */
+.section { margin-bottom:60px; }
+.section-head { display:flex; align-items:baseline; gap:16px; margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+.section-num { font-size:36px; font-weight:700; color:#dde8dd; line-height:1; flex-shrink:0; }
+.section-title { font-size:clamp(18px,2.5vw,24px); font-weight:700; color:var(--ink); }
+
+/* 本文 */
+p { font-size:17px; color:#333; line-height:1.9; margin-bottom:16px; }
+strong { font-weight:700; color:var(--ink); }
+.kw { font-weight:700; color:var(--gd); }
+
+/* サブセクション */
+.subsection { margin-bottom:32px; }
+.subsection-title { font-size:16px; font-weight:700; color:var(--gm); margin-bottom:12px; letter-spacing:0.05em; border-left:3px solid var(--gd); padding-left:12px; }
+
+/* リスト */
+ul.list { list-style:none; padding:0; margin-bottom:16px; }
+ul.list li { display:flex; gap:12px; padding:6px 0; font-size:17px; color:#333; line-height:1.8; border-bottom:1px solid #f0f0ec; }
+ul.list li:last-child { border-bottom:none; }
+ul.list li::before { content:"—"; color:var(--gm); flex-shrink:0; font-weight:700; }
+
+/* カード */
+.card { background:var(--light); border-radius:10px; padding:24px 28px; margin-bottom:20px; }
+.card-green { background:var(--gp); border-radius:10px; padding:24px 28px; margin-bottom:20px; }
+.card-red { background:#fff4f4; border-radius:10px; padding:24px 28px; margin-bottom:20px; }
+.card-dark { background:#1c1c1a; border-radius:10px; padding:24px 28px; margin-bottom:20px; }
+.card-label { font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:12px; }
+
+/* NG表示 */
+.ng-box { background:#fff0f0; border-left:4px solid var(--red); border-radius:0 10px 10px 0; padding:20px 24px; margin-bottom:20px; }
+.ng-box .ng-label { font-size:12px; font-weight:700; color:var(--red); letter-spacing:0.15em; margin-bottom:8px; }
+
+/* グリッド */
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media(max-width:640px){ .g2 { grid-template-columns:1fr; } }
+
+/* フッター */
+.footer { margin-top:80px; padding-top:24px; border-top:1px solid var(--line); font-size:12px; color:#aaa; text-align:right; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ヘッダー -->
+  <div class="page-header">
+    <p class="label">THE Public Stand — 店内演出</p>
+    <h1>店内装飾の演出について</h1>
+    <p class="meta">会議録 / 内部資料</p>
+  </div>
+
+  <!-- S1: インパクト重視の主要アイテム -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">インパクト重視の主要アイテム</h2>
+    </div>
+
+    <p>店内装飾は伝統的な和風にとどまらない、<strong>「アウトロー」で「エッジの効いた」独特な世界観</strong>の構築を目指す。外国人が「海外のゲームに出てくる日本編のエリア」に入った時のような、説明不要なアイコニックな演出が重視されている。</p>
+
+    <div class="subsection">
+      <p class="subsection-title">刀（日本刀・脇差）</p>
+      <ul class="list">
+        <li>壁に刀や脇差を掛ける演出を計画。刀だけでなく脇差もセットで置くことで、より本格的な雰囲気を出す。</li>
+        <li>現在設置されているテレビを撤去した後のスペースを活用して掛ける案が提案されている。</li>
+        <li>酔った客やダーツをプレイする客が壊さないよう、<strong>客の手が届かない高い位置</strong>への設置、または<strong>透明なスクエアケース</strong>に入れての展示を検討。</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">神棚と招き猫</p>
+      <ul class="list">
+        <li>入り口付近やデッドスペースを活用して神棚を設置し、そこに招き猫を置く演出。</li>
+        <li>「ヤクザの事務所のよう」というくらい尖ったアウトローな雰囲気が、コンセプトに合致するとして肯定的に評価されている。</li>
+        <li>神棚は現場の職人（おじいちゃん・おっちゃん）に<strong>特注制作</strong>することを検討。</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">能面</p>
+      <ul class="list">
+        <li>バーカウンターの上などに、少し怖い雰囲気の<strong>能面を3〜4つ</strong>掛けることで、独特の空気を醸成する。</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">大仏</p>
+      <ul class="list">
+        <li>入り口付近に<strong>大仏のオブジェ</strong>を置くことで、アイコニックで説明不要な面白さを演出。</li>
+        <li>大仏の周辺を季節ごとに装飾を変えていくことで、視覚的に分かりやすい継続的な演出も可能。</li>
+      </ul>
+    </div>
+
+    <div class="ng-box">
+      <p class="ng-label">❌ あえて採用しないもの</p>
+      <p style="font-size:16px; color:#b5302a; margin:0;">今回の尖ったコンセプトに合わないとして、<strong>観葉植物・灯籠・砂利・竹垣は「なし」</strong>と明確に判断された。</p>
+    </div>
+  </div>
+
+  <!-- S2: グラフィックと色彩 -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">グラフィックと色彩による空間構成</h2>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">グラフィックシート（浮世絵など）</p>
+      <ul class="list">
+        <li>ガラス面や壁面に、<strong>浮世絵や物語性のあるデザインのシート</strong>を貼る演出を検討。</li>
+        <li>視覚的なインパクトだけでなく、ガラス面などに付着する<strong>手垢などの汚れを防止し、掃除の手間を省く</strong>という実用的な側面も考慮。</li>
+        <li>現在「パブリックスタンド」という文字が残っているガラスドアなどを、シートで新しい世界観に塗り替えることを検討。</li>
+        <li>大掛かりな工事を避けるため、<strong>赤い部分の上にカッティングシートを貼って色を変える</strong>手法も提案されている。</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">赤と緑のコントラスト</p>
+      <div class="card-green">
+        <p class="card-label" style="color:var(--gm);">配色の方針</p>
+        <p style="margin:0; font-size:16px;"><strong>「抹茶の緑」</strong>と<strong>「バーの雰囲気を感じさせる赤」</strong>を効果的に使い、伝統と現代を融合させる配色。緑をベースに白抜きにする案や、黒背景に白文字にする案などが議論されている。</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">映像演出</p>
+      <ul class="list">
+        <li>モニターでの動画表示（アディショナルな表示）も、看板やシートと並行して空間を彩る要素として検討。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- S3: 季節のディスプレイ -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">季節のディスプレイと実用性</h2>
+    </div>
+
+    <p>来店客（特に外国人観光客）に日本の四季を感じさせる演出として、季節のディスプレイを重要な要素として議論。</p>
+
+    <div class="g2">
+      <div class="card-green">
+        <p class="card-label" style="color:var(--gm);">設置・演出案</p>
+        <ul class="list">
+          <li>入り口付近の右側デッドスペースや、現在テーブルが置かれている場所を候補として活用。</li>
+          <li>神棚の中に招き猫と季節ものを組み合わせる演出。</li>
+          <li>桜などのアイテムを<strong>透明なスクエアケース</strong>（ケーキ屋のショーケースのようなもの）の中に配置。</li>
+          <li>大仏のオブジェ周辺を季節ごとに装飾を変えていく手法。</li>
+        </ul>
+      </div>
+      <div class="card-red">
+        <p class="card-label" style="color:var(--red);">運用面の懸念と方針</p>
+        <ul class="list">
+          <li>凝りすぎるとメンテナンス（清掃・入れ替え）をする人がいなくなるという懸念が示された。</li>
+          <li><strong>「季節の要素は少し控えめにする」</strong>、あるいは<strong>「説明不要な分かりやすいものを置く」</strong>という持続可能な範囲での演出に落ち着く方向。</li>
+          <li>季節ごとの入れ替えは店舗スタッフが行うことを想定。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4: 看板・シートのデザイン -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">看板とシートのデザイン</h2>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">ロゴ・看板の配色</p>
+      <ul class="list">
+        <li>緑をベースに白抜きにする案、黒背景に白文字にする案などが議論されている。</li>
+        <li>現状のゴールド系の色を活かすか、黒や赤に変更するかの詳細な色調整が行われている。</li>
+        <li><strong>丸い看板を3つ並べる</strong>という配置案も提案されている。</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">アイコニックな表現</p>
+      <div class="card">
+        <p class="card-label" style="color:var(--gray);">デザイン方針</p>
+        <p style="font-size:16px; margin:0;">「説明されなければ分からないもの」ではなく、<strong>「物と形」で直感的に伝わるアイコニックなデザイン</strong>が重視されている。文字が小さくて読めないよりも、マークや象徴的な形状で認識させる方向性。初めて見る人でも「バーであること」が分かるよう、ロゴの下などに「パブリックスタンド」の名称を入れる配慮も検討。</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">「抹茶」の強調</p>
+      <ul class="list">
+        <li>ターゲットに対して<strong>「抹茶（お茶）」の要素をしっかりと分からせる</strong>ことが重要視されている。</li>
+        <li>文字数を削っても「抹茶」というキーワードは残す方向で調整。</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">その他の媒体</p>
+      <ul class="list">
+        <li>カッティングシートを使わない箇所では、<strong>タペストリーやイーゼルに立てたポスター</strong>を活用する案がある。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- S5: ユニフォーム -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title">ユニフォーム</h2>
+    </div>
+
+    <p>コストを抑えつつも店舗の独特な世界観に合う、シンプルで「それっぽい」スタイルが提案されている。</p>
+
+    <div class="card-green">
+      <p class="card-label" style="color:var(--gm);">検討内容</p>
+      <ul class="list">
+        <li><strong>基本スタイル：</strong>コスト面を考慮し、「ベタなTシャツ」をベースにする案。</li>
+        <li><strong>前掛けの活用：</strong>Tシャツの上に「前掛け（帆前掛け風）」を着用するスタイル。特別なユニフォームを新調せずとも和の雰囲気を演出できる。</li>
+        <li><strong>デザインの簡略化：</strong>前掛けにはあえて<strong>「ロゴはいらない」</strong>という意見。装飾を盛り込みすぎて「うるさく」なるのを避け、既製品などを活用したシンプルな構成が好まれている。</li>
+        <li><strong>目指す雰囲気：</strong>カチッとした制服ではなく、少し「ラフさ」がありつつも、店舗のコンセプトに馴染むスタイル。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">© Shime CaVa Branding Works</div>
+
+</div>
+</body>
+</html>
